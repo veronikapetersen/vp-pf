@@ -1,0 +1,6 @@
+{
+  "files.exclude": {
+    "src/app/components/Nav/Nav.module.css": true,
+    "src/app/components/Nav/Nav.module.css.map": true
+  }
+}
