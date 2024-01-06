@@ -1,6 +1,8 @@
 {
   "files.exclude": {
     "src/app/components/Nav/Nav.module.css": true,
-    "src/app/components/Nav/Nav.module.css.map": true
+    "src/app/components/Nav/Nav.module.css.map": true,
+    "src/app/components/Menu/Menu.module.css": true,
+    "src/app/components/Menu/Menu.module.css.map": true
   }
 }

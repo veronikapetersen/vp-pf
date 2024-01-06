@@ -1,0 +1,34 @@
+.stage {
+  transform-style: preserve-3d;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: 4px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 5vw 5vw calc(7.5vw + 67px) 0;
+}
+.stage .list {
+  margin: 1rem;
+  transform-style: preserve-3d;
+  list-style: none;
+  perspective: 800px;
+  position: relative;
+  margin: 0;
+  text-align: right;
+}
+.stage .list .menulink {
+  background-color: violet;
+  margin: 1rem 0;
+  font-size: 5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateY(-45deg) translateZ(0) scale(1);
+  transform-origin: right center;
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}/*# sourceMappingURL=Menu.module.css.map */
