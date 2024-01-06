@@ -4,33 +4,37 @@
     overflow-y: auto;
     position: relative;
     perspective: 100vw;
+    width: 100%;
 
     .stage {
         transform-style: preserve-3d;
 
         .list {
             position: relative;
-            margin: 0;
-            padding-left: 0;
             list-style: none;
-            text-align: right;
-            width: 95%;
+            text-align: end;
+            width: 100%;
             transform-style: preserve-3d;
             text-transform: uppercase;
-            font-weight: bold;
 
             & .menulink {
+                color: transparent;
+                -webkit-text-stroke: 3px black;
                 cursor: pointer;
                 transform-style: preserve-3d;
+                background-color: violet;
+                transition: transform 1.5s cubic-bezier(.075, .82, .165, 1), color 0.2s;
+                transform: rotateY(-45deg) translateZ(0) scale(1);
+                transform-origin: right center;
+                transform-style: preserve-3d;
+                will-change: transform;
+                font-size: 5rem;
+                margin: 6px 0;
 
-                .linkcontainer {
-                    background-color: violet;
-                    transition: transform 1.5s cubic-bezier(.075, .82, .165, 1);
-                    transform: rotateY(-45deg) translateZ(0) scale(1);
-                    transform-origin: right center;
-                    transform-style: preserve-3d;
-                    will-change: transform;
-                    font-size: 5rem;
+                &:hover {
+                    transform: rotateY(-20deg);
+                    transform: rotateY(-20deg) translateZ(0) scale(1);
+                    color: black;
                 }
             }
         }
