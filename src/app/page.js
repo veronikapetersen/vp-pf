@@ -10,27 +10,91 @@ import SlideInHeading from "@/app/components/SlideInHeading/SlideInHeading";
 export default function Home() {
 
 
-  // const [timeline, setTimeline] = useState(null);
+  const [timeline, setTimeline] = useState(null);
 
-  // useLayoutEffect(() => {
-  //   const context = gsap.context(() => {
-  //     const tl = gsap.timeline({
-  //       paused: true
-  //     })
+  useLayoutEffect(() => {
+    const context = gsap.context(() => {
+      const tl = gsap.timeline({
+        paused: true
+      })
 
-  //     setTimeline(tl);
-  //   })
+      setTimeline(tl);
+    })
 
-  //   return () => { context.revert() }
-  // }, [])
+    return () => { context.revert() }
+  }, [])
 
 
   return (
     <>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
       <SlideInHeading></SlideInHeading>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
+      <div>a</div>
       {/* <Menu></Menu> */}
       {/* <Nav timeline={timeline} top={true}></Nav> */}
-      {/* <h1>Home Page</h1> */}
     </>
   )
 }

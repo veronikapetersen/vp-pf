@@ -1,24 +1,46 @@
 'use client';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
 import classes from './SlideInHeading.module.scss';
 import { useRef, useEffect } from "react";
-import { setInitialStates, fromLeftToRight } from './SlideInAnimation';
 
 export default function SlideInHeading() {
-
-    const tl = gsap.timeline();
 
     const heading1Ref = useRef(null);
     const heading2Ref = useRef(null);
 
     useEffect(() => {
-        tl
-            .add(setInitialStates(heading1Ref.current))
-            .add(fromLeftToRight(heading1Ref.current))
-            .play()
+
+        const heading1 = heading1Ref.current;
+        const heading2 = heading2Ref.current
+
+        gsap.to(heading1, {
+            left: "40%",
+            scrollTrigger: {
+                trigger: heading1,
+                start: "top 99%",
+                end: "top 1%",
+                scrub: 1,
+                markers: true,
+                toggleActions: "none play reverse none",
+            }
+        });
+
+        gsap.to(heading2, {
+            right: "40%",
+            scrollTrigger: {
+                trigger: heading2,
+                start: "top 99%",
+                end: "top 1%",
+                scrub: 1,
+                markers: true,
+                toggleActions: "none play reverse none",
+            }
+        });
+
     }, [])
-
-
 
     return (
         <div className={classes.container}>
