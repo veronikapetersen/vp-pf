@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 
 import Menu from "@/app/components/Menu/Menu";
 
+import SlideInHeading from "@/app/components/SlideInHeading/SlideInHeading";
 export default function Home() {
 
 
@@ -26,7 +27,8 @@ export default function Home() {
 
   return (
     <>
-      <Menu></Menu>
+      <SlideInHeading></SlideInHeading>
+      {/* <Menu></Menu> */}
       {/* <Nav timeline={timeline} top={true}></Nav> */}
       {/* <h1>Home Page</h1> */}
     </>
