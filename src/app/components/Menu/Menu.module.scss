@@ -26,7 +26,6 @@
                 transition: transform 1.5s cubic-bezier(.075, .82, .165, 1), color 0.2s;
                 transform: rotateY(-45deg) translateZ(0) scale(1);
                 transform-origin: right center;
-                transform-style: preserve-3d;
                 will-change: transform;
                 font-size: 5rem;
                 margin: 6px 0;
