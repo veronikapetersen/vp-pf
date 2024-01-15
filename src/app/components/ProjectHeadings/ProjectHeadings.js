@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 import classes from './ProjectHeadings.module.scss';
 import { useRef, useEffect } from "react";
 
-export function ProjectHeading1() {
+export function ProjectHeading1({ children }) {
 
     const titleRef = useRef(null);
 
@@ -22,19 +22,16 @@ export function ProjectHeading1() {
                 start: "top 40%",
                 end: "top 20%",
                 scrub: 1,
-                markers: true,
+                // markers: true,
                 toggleActions: "none play reverse none",
             }
         });
 
     }, [])
 
-
     return (
         <>
-            <div className={classes.wrapper}>
-                <h1 ref={titleRef} className={`${classes['project-title']} ${classes['project-title--current']} ${classes.parallax}`}>Project Title</h1>
-            </div>
+            <h1 ref={titleRef} className={`${classes['project-title']} ${classes['project-title--current']} ${classes.parallax}`}>{children}</h1>
         </>
     )
 }

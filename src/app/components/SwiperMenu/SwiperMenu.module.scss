@@ -1,0 +1,28 @@
+.swiper {
+    border: 1px solid black;
+    height: 100vh;
+
+    .slide {
+        background-color: beige;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    --swiper-scrollbar-border-radius: 10px;
+    --swiper-scrollbar-top: auto;
+    --swiper-scrollbar-bottom: 4px;
+    --swiper-scrollbar-left: auto;
+    --swiper-scrollbar-right: 4px;
+    // --swiper-scrollbar-sides-offset: 1%;
+    // --swiper-scrollbar-sides-offset: 100px;
+    --swiper-scrollbar-sides-offset: 20vh;
+    --swiper-scrollbar-bg-color: rgba(0, 0, 0, 0.1);
+    --swiper-scrollbar-drag-bg-color: rgba(0, 0, 0, 0.5);
+    --swiper-scrollbar-size: 4px;
+
+
+    .swiper-scrollbar.swiper-scrollbar-vertical {
+        height: 100px !important;
+    }
+}

@@ -1,84 +1,34 @@
 import { ProjectHeading1, ProjectHeading2 } from "@/app/components/ProjectHeadings/ProjectHeadings";
+import ParagraphText from "@/app/components/ParagraphText/ParagraphText";
+import ParagraphHeading from "@/app/components/ParagraphHeading/ParagraphHeading";
+import ProjectHero from "@/app/components/ProjectHero/ProjectHero";
+import ProjectTextContent from "@/app/components/ProjectTextContent/ProjectTextContent";
+import ProjectImage from "@/app/components/ProjectImage/ProjectImage";
+import PageLayout from "@/app/components/PageLayout/PageLayout";
+
 
 export default function Project() {
     return (
         <>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <ProjectHeading1></ProjectHeading1>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <ProjectHeading2></ProjectHeading2>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
-            <div>a</div>
+            <PageLayout>
+
+                <ProjectHero />
+                <ProjectTextContent />
+                <ProjectImage />
+                {/* <ParagraphHeading>
+                Project
+            </ParagraphHeading> */}
+
+                {/* <ParagraphText>
+                Sit ad sint nisi ea. Deserunt anim dolore irure minim ea Lorem amet aliqua enim aliquip fugiat proident.
+                In reprehenderit laboris ut officia. Et ut esse pariatur ullamco cupidatat mollit et aliquip.
+                Amet sunt quis laboris tempor pariatur voluptate. Excepteur nostrud consequat nostrud commodo ad incididunt incididunt eiusmod eiusmod nostrud dolore labore.
+                Ea do id elit qui non culpa amet dolor.
+            </ParagraphText> */}
+
+                {/* <ProjectHeading1></ProjectHeading1>
+            <ProjectHeading2></ProjectHeading2> */}
+            </PageLayout>
         </>
     )
 }
