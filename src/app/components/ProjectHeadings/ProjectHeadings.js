@@ -36,12 +36,12 @@ export function ProjectHeading1({ children }) {
     )
 }
 
-export function ProjectHeading2() {
+export function ProjectHeading2({ children }) {
 
     return (
         <>
             <div className={classes.pers}>
-                <h2 className={`${classes['project-title']} ${classes['project-title--next']}`}>Project h2</h2>
+                <h2 className={`${classes['project-title']} ${classes['project-title--next']}`}>{children}</h2>
             </div>
         </>
     )

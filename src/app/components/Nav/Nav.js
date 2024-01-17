@@ -25,21 +25,52 @@ export default function Nav({ timeline, top }) {
 
     return (
         <header className={`${classes.header} ${top ? classes['top-position'] : classes['bottom-position']}`} ref={logoRef}>
-            <div className={classes.logo} >
-                <div className={classes['logo-icon']}>&#129705;</div>
-                <div className={classes['logo-text']}>VP</div>
+
+            <div>
+                <div className={classes.logo}>VP</div>
             </div>
 
-            <nav className={classes.nav}>
-                <ul className={classes['nav-list']}>
-                    <li className={classes['nav-list-item']}>
-                        <a href="/">Home</a>
-                    </li>
-                    <li className={classes['nav-list-item']}>
-                        <a href="/about">About</a>
-                    </li>
-                </ul>
-            </nav>
+            <div className={classes.row}>
+                <div className={classes.column}>
+                    <nav className={classes.nav}>
+                        <ul className={classes['nav-list']}>
+                            <li className={classes['nav-list-item']}>
+                                <div>Veronika Petersen</div>
+                            </li>
+                            <li className={classes['nav-list-item']}>
+                                <div>Frontend Developer</div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div className={classes.column}>
+                    <nav className={classes.nav}>
+                        <ul className={classes['nav-list']}>
+                            <li className={classes['nav-list-item']}>
+                                <a href="/">CV/Experience</a>
+                            </li>
+                            <li className={classes['nav-list-item']}>
+                                <a href="/about">LinkedIn</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div className={classes.column}>
+                    <nav className={classes.nav}>
+                        <ul className={classes['nav-list']}>
+                            <li className={classes['nav-list-item']}>
+                                <a href="/">myemailhere@gmail.com</a>
+                            </li>
+                            <li className={classes['nav-list-item']}>
+                                <a href="/about">+45 xxxx xxxx</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
         </header>
     )
 }

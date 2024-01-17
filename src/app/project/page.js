@@ -15,6 +15,7 @@ export default function Project() {
                 <ProjectHero />
                 <ProjectTextContent />
                 <ProjectImage />
+
                 {/* <ParagraphHeading>
                 Project
             </ParagraphHeading> */}
@@ -26,8 +27,7 @@ export default function Project() {
                 Ea do id elit qui non culpa amet dolor.
             </ParagraphText> */}
 
-                {/* <ProjectHeading1></ProjectHeading1>
-            <ProjectHeading2></ProjectHeading2> */}
+                <ProjectHeading2>Next Project Name</ProjectHeading2>
             </PageLayout>
         </>
     )

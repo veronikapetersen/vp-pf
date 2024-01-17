@@ -23,6 +23,7 @@
                 cursor: pointer;
                 transform-style: preserve-3d;
                 background-color: violet;
+                opacity: 0.2;
                 transition: transform 1.5s cubic-bezier(.075, .82, .165, 1), color 0.2s;
                 transform: rotateY(-45deg) translateZ(0) scale(1);
                 transform-origin: right center;

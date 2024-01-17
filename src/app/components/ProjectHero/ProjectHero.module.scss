@@ -1,13 +1,18 @@
 .project-hero {
-    position: relative;
+    // position: relative;
     width: 100%;
-    z-index: 1;
     border: 1px solid #80808066;
     padding: 60px 0;
+    background-color: rgb(238, 238, 238);
 
-    // &__content {
-    //     border: 1px solid red;
-    // }
+    &__content {
+        // border: 1px solid red;
+
+        .btn {
+            text-align: right;
+            margin: 0 3rem;
+        }
+    }
 
     // &__title {
     //     border: 1px solid blue;
