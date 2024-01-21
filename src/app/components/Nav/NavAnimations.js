@@ -14,7 +14,6 @@ export const moveLogoDown = (logoRef, logoRefHeight) => {
         top: `calc(100% - ${logoRefHeight}px)`,
         transformOrigin: "center center",
         ease: "power1.out"
-
     });
 
     return tl;

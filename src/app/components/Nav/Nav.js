@@ -1,41 +1,45 @@
 'use client';
+import React from "react";
 import classes from "./Nav.module.scss";
-import { useRef, useEffect } from "react";
-import { setInitialStates, moveLogoDown, moveLogoUp } from "./NavAnimations";
+// import { useRef, useEffect } from "react";
+// import { setInitialStates, moveLogoDown, moveLogoUp } from "./NavAnimations";
 
-export default function Nav({ timeline, top }) {
+// export default function Nav({ timeline, top }) {
+const Nav = React.forwardRef((props, ref) => {
 
-    const logoRef = useRef(null);
 
-    useEffect(() => {
+    // const headerRef = useRef(null);
 
-        if (timeline && top) {
-            timeline
-                .add(setInitialStates(logoRef.current))
-                .add(moveLogoDown(logoRef.current, logoRef.current.offsetHeight))
-                .play()
-        } else if (timeline && !top) {
-            timeline
-                .add(setInitialStates(logoRef.current))
-                .add(moveLogoUp(logoRef.current))
-                .play()
-        }
+    // useEffect(() => {
 
-    }, [timeline])
+    //     if (timeline && top) {
+    //         timeline
+    //             .add(setInitialStates(headerRef.current))
+    //             .add(moveLogoDown(headerRef.current, headerRef.current.offsetHeight))
+    //             .play()
+    //     } else if (timeline && !top) {
+    //         timeline
+    //             .add(setInitialStates(headerRef.current))
+    //             .add(moveLogoUp(headerRef.current))
+    //             .play()
+    //     }
+
+    // }, [timeline])
 
     return (
-        <header className={`${classes.header} ${top ? classes['top-position'] : classes['bottom-position']}`} ref={logoRef}>
+        // <header className={`${classes.header} ${top ? classes['top-position'] : classes['bottom-position']}`} ref={headerRef}>
+        <header className={`${classes.header} `} >
 
             <div>
                 <div className={classes.logo}>VP</div>
             </div>
 
-            <div className={classes.row}>
+            <div ref={ref} className={classes.row}>
                 <div className={classes.column}>
                     <nav className={classes.nav}>
                         <ul className={classes['nav-list']}>
                             <li className={classes['nav-list-item']}>
-                                <div>Veronika Petersen</div>
+                                <div>Veronika Veronika</div>
                             </li>
                             <li className={classes['nav-list-item']}>
                                 <div>Frontend Developer</div>
@@ -73,4 +77,6 @@ export default function Nav({ timeline, top }) {
 
         </header>
     )
-}
+});
+
+export default Nav;

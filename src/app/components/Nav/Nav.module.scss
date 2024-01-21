@@ -1,8 +1,11 @@
 .header {
     width: 100%;
     max-width: 700px;
-    z-index: 9;
+    z-index: 99;
     padding: 10px 10px;
+    // mix-blend-mode: overlay;
+    // color: black;
+
 
     @media (min-width: 768px) {
         padding: 20px 10px;
@@ -38,14 +41,17 @@
     .nav {
         font-size: 14px;
     }
-}
 
-.top-position {
     position: fixed;
     top: 0;
 }
 
-.bottom-position {
-    position: fixed;
-    bottom: 0;
-}
+// .top-position {
+//     position: fixed;
+//     top: 0;
+// }
+
+// .bottom-position {
+//     position: fixed;
+//     bottom: 0;
+// }

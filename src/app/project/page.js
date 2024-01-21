@@ -4,17 +4,22 @@ import ParagraphHeading from "@/app/components/ParagraphHeading/ParagraphHeading
 import ProjectHero from "@/app/components/ProjectHero/ProjectHero";
 import ProjectTextContent from "@/app/components/ProjectTextContent/ProjectTextContent";
 import ProjectImage from "@/app/components/ProjectImage/ProjectImage";
-import PageLayout from "@/app/components/PageLayout/PageLayout";
+import ProjectPageLayout from "@/app/components/ProjectPageLayout/ProjectPageLayout";
 
 
 export default function Project() {
     return (
         <>
-            <PageLayout>
+            <ProjectPageLayout>
 
                 <ProjectHero />
                 <ProjectTextContent />
                 <ProjectImage />
+                <ProjectTextContent />
+                <ProjectImage />
+                <ProjectTextContent />
+                <ProjectTextContent />
+                <ProjectTextContent />
 
                 {/* <ParagraphHeading>
                 Project
@@ -28,7 +33,7 @@ export default function Project() {
             </ParagraphText> */}
 
                 <ProjectHeading2>Next Project Name</ProjectHeading2>
-            </PageLayout>
+            </ProjectPageLayout>
         </>
     )
 }
