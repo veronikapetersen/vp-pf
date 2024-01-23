@@ -3,6 +3,9 @@
     border: 1px solid transparent;
     border-radius: 50%;
     padding: 10px;
+    position: fixed;
+    top: 5vh;
+    right: 60px;
 
     &:hover {
         border: 1px solid black;

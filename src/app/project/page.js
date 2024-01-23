@@ -1,11 +1,12 @@
-import { ProjectHeading1, ProjectHeading2 } from "@/app/components/ProjectHeadings/ProjectHeadings";
-import ParagraphText from "@/app/components/ParagraphText/ParagraphText";
-import ParagraphHeading from "@/app/components/ParagraphHeading/ParagraphHeading";
-import ProjectHero from "@/app/components/ProjectHero/ProjectHero";
-import ProjectTextContent from "@/app/components/ProjectTextContent/ProjectTextContent";
-import ProjectImage from "@/app/components/ProjectImage/ProjectImage";
-import ProjectPageLayout from "@/app/components/ProjectPageLayout/ProjectPageLayout";
+import { ProjectHeading1, ProjectHeading2 } from "@/components/ProjectHeadings/ProjectHeadings";
+import ParagraphText from "@/components/ParagraphText/ParagraphText";
+import ParagraphHeading from "@/components/ParagraphHeading/ParagraphHeading";
+import ProjectHero from "@/components/ProjectHero/ProjectHero";
+import ProjectTextContent from "@/components/ProjectTextContent/ProjectTextContent";
+import ProjectImage from "@/components/ProjectImage/ProjectImage";
+import ProjectPageLayout from "@/components/ProjectPageLayout/ProjectPageLayout";
 
+import ProjectsData from "@/projects-data/ProjectsData";
 
 export default function Project() {
     return (

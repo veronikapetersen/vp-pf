@@ -1,6 +1,6 @@
 'use client';
 import classes from "./ProjectPageLayout.module.scss";
-import Nav from "@/app/components/Nav/Nav";
+import Nav from "@/components/Nav/Nav";
 
 import { useRef, useEffect } from "react";
 

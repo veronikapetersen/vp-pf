@@ -1,6 +1,6 @@
 import classes from './ProjectTextContent.module.scss';
 
-import ParagraphHeading from '@/app/components/ParagraphHeading/ParagraphHeading';
+import ParagraphHeading from '@/components/ParagraphHeading/ParagraphHeading';
 export default function ProjectContent() {
 
 

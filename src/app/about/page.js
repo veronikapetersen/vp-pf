@@ -1,9 +1,9 @@
 'use client';
 
-import BackButton from "@/app/components/Buttons/BackButton/BackButton";
-import Nav from "@/app/components/Nav/Nav";
+import BackButton from "@/components/Buttons/BackButton/BackButton";
+import Nav from "@/components/Nav/Nav";
 import { useLayoutEffect, useState } from "react";
-import SwiperMenu from "@/app/components/SwiperMenu/SwiperMenu";
+import SwiperMenu from "@/components/SwiperMenu/SwiperMenu";
 
 import { gsap } from "gsap";
 

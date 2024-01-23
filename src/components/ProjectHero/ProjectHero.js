@@ -1,9 +1,9 @@
 import classes from './ProjectHero.module.scss';
-import { ProjectHeading1 } from "@/app/components/ProjectHeadings/ProjectHeadings";
-import BackButton from '@/app/components/Buttons/BackButton/BackButton';
+import { ProjectHeading1 } from "@/components/ProjectHeadings/ProjectHeadings";
+import BackButton from '@/components/Buttons/BackButton/BackButton';
 
 
-export default function ProjectHero() {
+export default function ProjectHero({title}) {
 
     return (
         <div className={classes['project-hero']}>
@@ -12,7 +12,7 @@ export default function ProjectHero() {
                     <BackButton />
                 </div>
                 <div className={classes['project-hero__title']}>
-                    <ProjectHeading1>title</ProjectHeading1>
+                    <ProjectHeading1>{title}</ProjectHeading1>
                 </div>
             </div>
         </div>

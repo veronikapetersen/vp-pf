@@ -1,12 +1,12 @@
 'use client';
 
-import Nav from "@/app/components/Nav/Nav";
+import Nav from "@/components/Nav/Nav";
 import { useLayoutEffect, useState } from "react";
 import { gsap } from "gsap";
 
-import Menu from "@/app/components/Menu/Menu";
+import Menu from "@/components/Menu/Menu";
 
-import SlideInHeading from "@/app/components/SlideInHeading/SlideInHeading";
+import SlideInHeading from "@/components/SlideInHeading/SlideInHeading";
 
 
 export default function Home() {
