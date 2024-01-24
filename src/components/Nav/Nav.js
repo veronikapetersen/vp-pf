@@ -3,10 +3,14 @@ import React from "react";
 import classes from "./Nav.module.scss";
 import { useRef, useEffect } from "react";
 import Link from "next/link";
-import { setInitialStatesforMoveLogo, moveLogoDown, moveLogoUp, setInitialStatesForSlideUp, slideLogoUp, setInitialStatesForFadeOutNavLinks, fadeOutNavLinks } from "./NavAnimations";
+import {
+    setInitialStatesforMoveLogo, moveLogoDown, moveLogoUp,
+    setInitialStatesForSlideUp, slideLogoUp,
+    setInitialStatesForFadeOutNavLinks, fadeOutNavLinks, fadeInNavLinks,
+    moveLogoDownOnScroll
+} from "./NavAnimations";
 
 export default function Nav(props) {
-
 
     const headerRef = useRef(null);
     const logoRef = useRef(null);
@@ -14,9 +18,6 @@ export default function Nav(props) {
     const column1 = useRef(null);
     const column2 = useRef(null);
     const column3 = useRef(null);
-
-    console.log(columnsRef.current)
-
 
     useEffect(() => {
 
@@ -35,12 +36,14 @@ export default function Nav(props) {
                 .add(setInitialStatesForSlideUp(logoRef.current, column1.current, column2.current, column3.current))
                 .add(slideLogoUp(logoRef.current, column1.current, column2.current, column3.current))
                 .play()
-        } else if (props.timeline && props.bottom && props.fadeOutNavLinks) {
+        } else if (props.timeline && props.bottom && props.fadeNavLinks) {
             props.timeline
                 .add(setInitialStatesforMoveLogo(headerRef.current))
                 .add(setInitialStatesForFadeOutNavLinks(columnsRef.current))
                 .add(moveLogoUp(headerRef.current))
                 .add(fadeOutNavLinks(columnsRef.current, props.main))
+                .add(moveLogoDownOnScroll(headerRef.current, headerRef.current.offsetHeight, props.bottomHeading))
+                .add(fadeInNavLinks(columnsRef.current, props.bottomHeading))
                 .play()
         }
 
@@ -56,7 +59,6 @@ export default function Nav(props) {
                     <Link href="/" >VP</Link></div>
             </div>
 
-            {/* <div ref={ref} className={classes.row}> */}
             <div ref={columnsRef} className={classes.row}>
                 <div ref={column1} className={classes.column}>
                     <nav className={classes.nav}>

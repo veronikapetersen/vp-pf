@@ -35,7 +35,6 @@ export const moveLogoUp = (headerRef) => {
     return tl;
 };
 
-
 export const setInitialStatesForSlideUp = (logoRef, column1Ref, column2Ref, column3Ref) => {
     gsap.set([logoRef, column1Ref, column2Ref, column3Ref], {
         transform: `translateY(120%)`
@@ -61,7 +60,6 @@ export const slideLogoUp = (logoRef, column1Ref, column2Ref, column3Ref) => {
     return tl;
 };
 
-
 export const setInitialStatesForFadeOutNavLinks = (navLinks) => {
     gsap.set(navLinks, { opacity: 1 });
 }
@@ -72,7 +70,7 @@ export const fadeOutNavLinks = (navLinks, main) => {
         scrollTrigger: {
             trigger: main,
             start: "top 10%",
-            end: "400px 20%",
+            end: "250px 15%",
             markers: true,
             scrub: true,
             toggleActions: "play none none reverse",
@@ -80,21 +78,46 @@ export const fadeOutNavLinks = (navLinks, main) => {
     });
 
     tl.to(navLinks, { opacity: 0 });
+
     return tl;
 }
 
-export const fadeInNavLinks = (navLinks, main) => {
-    // const tl = gsap.timeline({
-    //     scrollTrigger: {
-    //         trigger: main,
-    //         start: "top 10%",
-    //         end: "400px 20%",
-    //         markers: true,
-    //         scrub: true,
-    //         toggleActions: "play none none reverse",
-    //     }
-    // });
+export const moveLogoDownOnScroll = (headerRef, headerRefHeight, bottomHeadingRef) => {
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: bottomHeadingRef,
+            start: "top 70%",
+            end: "50% 90%", // when the 50% of the bottomHeadingRef is at 90% of the viewport
+            markers: true,
+            scrub: true,
+            toggleActions: "play none none reverse",
+        }
+    });
 
-    // tl.to(navLinks, { opacity: 1 });
+    tl.to(headerRef, {
+        top: `calc(100vh - ${headerRefHeight}px)`,
+        transformOrigin: "center center",
+    });
+
+    return tl;
+};
+
+export const fadeInNavLinks = (navLinks, bottomHeadingRef) => {
+
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: bottomHeadingRef,
+            start: "top 40%",
+            end: "60% 70%",
+            markers: false,
+            scrub: true,
+            toggleActions: "play none none reverse",
+        }
+    });
+
+    tl.to(navLinks, {
+        opacity: 1,
+    })
+
     return tl;
 }

@@ -6,7 +6,6 @@
     // mix-blend-mode: overlay;
     // color: black;
 
-
     @media (min-width: 768px) {
         padding: 20px 10px;
     }
@@ -36,35 +35,28 @@
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
+        overflow: hidden;
     }
 
     .nav {
         font-size: 14px;
     }
 
-    //     position: fixed;
-    //     top: 0;
+    position: fixed;
 }
 
 .top-position {
-    position: fixed;
     top: 0;
 }
 
 .bottom-position {
-    position: fixed;
     bottom: 0;
 }
 
 .slideUp {
-    position: fixed;
     bottom: 0;
 
     .logo-wrapper {
-        overflow: hidden;
-    }
-
-    .row {
         overflow: hidden;
     }
 }
