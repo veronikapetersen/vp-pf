@@ -42,16 +42,29 @@
         font-size: 14px;
     }
 
+    //     position: fixed;
+    //     top: 0;
+}
+
+.top-position {
     position: fixed;
     top: 0;
 }
 
-// .top-position {
-//     position: fixed;
-//     top: 0;
-// }
+.bottom-position {
+    position: fixed;
+    bottom: 0;
+}
 
-// .bottom-position {
-//     position: fixed;
-//     bottom: 0;
-// }
+.slideUp {
+    position: fixed;
+    bottom: 0;
+
+    .logo-wrapper {
+        overflow: hidden;
+    }
+
+    .row {
+        overflow: hidden;
+    }
+}
