@@ -1,21 +1,42 @@
 import classes from './Menu.module.scss';
 import Link from 'next/link';
 
+import { archivo_black } from '@/utils/fonts';
 import ProjectsData from "@/projects-data/ProjectsData";
 
+import gsap from 'gsap';
+import { useEffect, useRef } from 'react';
+
+
 export default function Menu() {
+
+    const menulinksRef = useRef(null);
+
+    useEffect(() => {
+
+        const menulinks = menulinksRef.current.children;
+        const menulinksArray = Array.from(menulinks);
+
+        gsap.set(menulinksArray, { y: 100, opacity: 0 });
+        // gsap.set(menulinksArray, { y: '-100vh' });
+        gsap.to(menulinksArray, { y: 0, opacity: 1, stagger: 0.1, duration: 0.5, delay: 0.5 });
+
+    }, []);
+
+
+
+
 
     return (
         <div className={classes['stage-perspective']}>
             <div className={classes.stage}>
-                <ul className={classes.list}>
+                <ul ref={menulinksRef} className={classes.list}>
                     {ProjectsData.map((project) => (
-
-                        <li key={project.id} className={classes.menulink}>
-                            <Link href={`/projects/${project.slug}`}>{project.title}</Link>
+                        <li key={project.id} className={`${classes.menulink} ${archivo_black.className}`}>
+                            <Link data-text={project.year + ' /'} href={`/projects/${project.slug}`}>{project.title}</Link>
                         </li>
                     ))}
-                    
+
                 </ul>
             </div>
         </div>

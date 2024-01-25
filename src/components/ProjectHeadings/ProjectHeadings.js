@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+import { archivo_black } from "@/utils/fonts";
 import classes from './ProjectHeadings.module.scss';
 import { useRef, useEffect } from "react";
 
@@ -33,7 +34,7 @@ export function ProjectHeading1({ children }) {
 
     return (
         <>
-            <div className={classes['heading-wrapper']}>
+            <div className={`${classes['heading-wrapper']} ${archivo_black.className}`}>
                 <h1 ref={titleRef} className={`${classes['project-title']} ${classes['project-title--current']} ${classes.parallax}`}>{children}</h1>
             </div>
         </>
@@ -45,7 +46,7 @@ export function ProjectHeading2(props) {
     return (
         <>
 
-            <div className={`${classes['heading-wrapper']} ${classes['heading-wrapper--next']}`}>
+            <div className={`${classes['heading-wrapper']} ${classes['heading-wrapper--next']} ${archivo_black.className}`}>
 
                 <div className={classes['subheading']}>Next project</div>
 

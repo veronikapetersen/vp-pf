@@ -29,6 +29,14 @@
         @media (min-width: 992px) {
             font-size: 4rem;
         }
+
+        -webkit-text-stroke: 2px black;
+        transition: color 0.4s cubic-bezier(.075, .82, .165, 1);
+
+        &:hover {
+            color: transparent;
+        }
+
     }
 
     .row {

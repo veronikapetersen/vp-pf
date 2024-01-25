@@ -1,8 +1,7 @@
 'use client';
 import Nav from "@/components/Nav/Nav";
-import { ProjectHeading1, ProjectHeading2 } from "@/components/ProjectHeadings/ProjectHeadings";
+import { ProjectHeading2 } from "@/components/ProjectHeadings/ProjectHeadings";
 import ParagraphText from "@/components/ParagraphText/ParagraphText";
-import ParagraphHeading from "@/components/ParagraphHeading/ParagraphHeading";
 import ProjectHero from "@/components/ProjectHero/ProjectHero";
 import ProjectTextContent from "@/components/ProjectTextContent/ProjectTextContent";
 import ProjectImage from "@/components/ProjectImage/ProjectImage";
@@ -21,9 +20,6 @@ export default function Project({ params }) {
 
     const mainRef = useRef(null);
     const bottomHeadingRef = useRef(null);
-
-    // console.log("bottom heading ref", bottomHeadingRef.current)
-    // console.log("main reffff", mainRef.current)
 
     const [timeline, setTimeline] = useState(null);
 

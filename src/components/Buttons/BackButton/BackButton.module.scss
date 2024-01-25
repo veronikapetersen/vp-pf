@@ -1,4 +1,5 @@
 .back-button {
+    z-index: 99;
     border: 1px solid transparent;
     border-radius: 50%;
     padding: 10px;
@@ -14,5 +15,4 @@
             scale: 1.2;
         }
     }
-
 }

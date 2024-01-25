@@ -18,23 +18,32 @@
             text-transform: uppercase;
 
             & .menulink {
-                color: transparent;
                 -webkit-text-stroke: 3px black;
                 cursor: pointer;
                 transform-style: preserve-3d;
-                background-color: violet;
-                opacity: 0.2;
-                transition: transform 1.5s cubic-bezier(.075, .82, .165, 1), color 0.2s;
+                transition: transform 1.5s cubic-bezier(.075, .82, .165, 1), color 0.3s;
                 transform: rotateY(-45deg) translateZ(0) scale(1);
                 transform-origin: right center;
                 will-change: transform;
-                font-size: 7rem;
+                font-size: 9rem;
                 margin: 6px 0;
 
                 &:hover {
-                    transform: rotateY(-20deg);
                     transform: rotateY(-20deg) translateZ(0) scale(1);
-                    color: black;
+                    color: transparent;
+                }
+
+                a::before {
+                    content: attr(data-text);
+                    position: relative;
+                    top: -90px;
+                    right: 10px;
+                    font-size: 16px;
+                    color: black !important;
+                    pointer-events: none;
+                    transition: none;
+                    -webkit-text-stroke: transparent;
+                    font-weight: normal;
                 }
             }
         }

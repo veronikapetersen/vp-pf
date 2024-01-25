@@ -3,6 +3,8 @@ import React from "react";
 import classes from "./Nav.module.scss";
 import { useRef, useEffect } from "react";
 import Link from "next/link";
+import { roboto } from '@/utils/fonts';
+
 import {
     setInitialStatesforMoveLogo, moveLogoDown, moveLogoUp,
     setInitialStatesForSlideUp, slideLogoUp,
@@ -54,7 +56,7 @@ export default function Nav(props) {
             ref={headerRef}
             className={`${classes.header} ${props.top ? classes['top-position'] : props.bottom ? classes['bottom-position'] : props.slideUp ? classes.slideUp : ''}`}
         >
-            <div className={classes['logo-wrapper']}>
+            <div className={`${classes['logo-wrapper']} ${roboto.className}`}>
                 <div ref={logoRef} className={classes.logo}>
                     <Link href="/" >VP</Link></div>
             </div>
