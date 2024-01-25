@@ -5,6 +5,7 @@
     position: relative;
     perspective: 100vw;
     width: 100%;
+    padding-right: 80px;
 
     .stage {
         transform-style: preserve-3d;
@@ -22,14 +23,16 @@
                 cursor: pointer;
                 transform-style: preserve-3d;
                 transition: transform 1.5s cubic-bezier(.075, .82, .165, 1), color 0.3s;
-                transform: rotateY(-45deg) translateZ(0) scale(1);
+                // transform: rotateY(-45deg) translateZ(0) scale(1);
+
+                opacity: 0;
                 transform-origin: right center;
                 will-change: transform;
                 font-size: 9rem;
                 margin: 6px 0;
 
                 &:hover {
-                    transform: rotateY(-20deg) translateZ(0) scale(1);
+                    transform: rotateY(-20deg) translateZ(0) scale(1) !important;
                     color: transparent;
                 }
 

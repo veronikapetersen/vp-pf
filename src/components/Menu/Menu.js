@@ -7,7 +7,6 @@ import ProjectsData from "@/projects-data/ProjectsData";
 import gsap from 'gsap';
 import { useEffect, useRef } from 'react';
 
-
 export default function Menu() {
 
     const menulinksRef = useRef(null);
@@ -17,15 +16,10 @@ export default function Menu() {
         const menulinks = menulinksRef.current.children;
         const menulinksArray = Array.from(menulinks);
 
-        gsap.set(menulinksArray, { y: 100, opacity: 0 });
-        // gsap.set(menulinksArray, { y: '-100vh' });
-        gsap.to(menulinksArray, { y: 0, opacity: 1, stagger: 0.1, duration: 0.5, delay: 0.5 });
+        gsap.set(menulinksArray, { opacity: 0, y: '150vh', rotateY: '-90deg' });
+        gsap.to(menulinksArray, { y: 0, opacity: 1, rotateY: '-45deg', stagger: 0.1, duration: 2, ease: "power3.inOut", delay: 0.2 });
 
     }, []);
-
-
-
-
 
     return (
         <div className={classes['stage-perspective']}>
@@ -36,7 +30,6 @@ export default function Menu() {
                             <Link data-text={project.year + ' /'} href={`/projects/${project.slug}`}>{project.title}</Link>
                         </li>
                     ))}
-
                 </ul>
             </div>
         </div>

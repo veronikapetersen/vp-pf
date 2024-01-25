@@ -30,6 +30,7 @@ export default function Home() {
       <Nav
         timeline={timeline}
         slideUp={true}
+        delay={1.8}
       ></Nav>
     </>
   )

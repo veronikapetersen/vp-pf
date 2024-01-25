@@ -41,18 +41,20 @@ export const setInitialStatesForSlideUp = (logoRef, column1Ref, column2Ref, colu
     });
 };
 
-export const slideLogoUp = (logoRef, column1Ref, column2Ref, column3Ref) => {
+export const slideLogoUp = (logoRef, column1Ref, column2Ref, column3Ref, delay = 0.2) => {
     const tl = gsap.timeline();
 
     tl
-        .to(logoRef, {
+        // .to(logoRef, {
+        //     duration: 1,
+        //     // delay: 0.2,
+        //     delay,
+        //     transform: `translateY(0)`,
+        //     ease: "power2.inOut"
+        // })
+        .to([logoRef, column1Ref, column2Ref, column3Ref], {
             duration: 1,
-            delay: 0.2,
-            transform: `translateY(0)`,
-            ease: "power2.inOut"
-        })
-        .to([column1Ref, column2Ref, column3Ref], {
-            duration: 1,
+            delay,
             transform: `translateY(0)`,
             ease: "power2.inOut",
             stagger: 0.2

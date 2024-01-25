@@ -36,7 +36,7 @@ export default function Nav(props) {
         } else if (props.timeline && props.slideUp) {
             props.timeline
                 .add(setInitialStatesForSlideUp(logoRef.current, column1.current, column2.current, column3.current))
-                .add(slideLogoUp(logoRef.current, column1.current, column2.current, column3.current))
+                .add(slideLogoUp(logoRef.current, column1.current, column2.current, column3.current, props.delay))
                 .play()
         } else if (props.timeline && props.bottom && props.fadeNavLinks) {
             props.timeline

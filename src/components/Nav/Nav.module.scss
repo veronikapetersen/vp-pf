@@ -67,4 +67,9 @@
     .logo-wrapper {
         overflow: hidden;
     }
+
+    .logo,
+    .column {
+        transform: translateY(120%);
+    }
 }
