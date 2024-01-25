@@ -26,7 +26,7 @@ export default function Nav(props) {
                 .add(setInitialStatesforMoveLogo(headerRef.current))
                 .add(moveLogoDown(headerRef.current, headerRef.current.offsetHeight))
                 .play()
-        } else if (props.timeline && props.bottom && !props.fadeOutNavLinks) {
+        } else if (props.timeline && props.bottom && !props.fadeNavLinks) {
             props.timeline
                 .add(setInitialStatesforMoveLogo(headerRef.current))
                 .add(moveLogoUp(headerRef.current))

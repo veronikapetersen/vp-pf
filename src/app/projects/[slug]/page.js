@@ -22,7 +22,8 @@ export default function Project({ params }) {
     const mainRef = useRef(null);
     const bottomHeadingRef = useRef(null);
 
-    console.log("bottom heading ref", bottomHeadingRef.current)
+    // console.log("bottom heading ref", bottomHeadingRef.current)
+    // console.log("main reffff", mainRef.current)
 
     const [timeline, setTimeline] = useState(null);
 

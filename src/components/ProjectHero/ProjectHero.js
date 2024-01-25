@@ -3,7 +3,7 @@ import { ProjectHeading1 } from "@/components/ProjectHeadings/ProjectHeadings";
 import BackButton from '@/components/Buttons/BackButton/BackButton';
 
 
-export default function ProjectHero({title}) {
+export default function ProjectHero({ title }) {
 
     return (
         <div className={classes['project-hero']}>

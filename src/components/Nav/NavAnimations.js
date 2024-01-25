@@ -71,7 +71,7 @@ export const fadeOutNavLinks = (navLinks, main) => {
             trigger: main,
             start: "top 10%",
             end: "250px 15%",
-            markers: true,
+            markers: false,
             scrub: true,
             toggleActions: "play none none reverse",
         }
@@ -88,7 +88,7 @@ export const moveLogoDownOnScroll = (headerRef, headerRefHeight, bottomHeadingRe
             trigger: bottomHeadingRef,
             start: "top 70%",
             end: "50% 90%", // when the 50% of the bottomHeadingRef is at 90% of the viewport
-            markers: true,
+            markers: false,
             scrub: true,
             toggleActions: "play none none reverse",
         }
@@ -107,8 +107,8 @@ export const fadeInNavLinks = (navLinks, bottomHeadingRef) => {
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: bottomHeadingRef,
-            start: "top 40%",
-            end: "60% 70%",
+            start: "top 65%",
+            end: "80% 95%",
             markers: false,
             scrub: true,
             toggleActions: "play none none reverse",
