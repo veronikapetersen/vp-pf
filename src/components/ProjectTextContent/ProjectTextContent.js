@@ -1,27 +1,40 @@
 import classes from './ProjectTextContent.module.scss';
+import Link from 'next/link';
 
 import ParagraphHeading from '@/components/ParagraphHeading/ParagraphHeading';
-export default function ProjectContent() {
 
+
+export default function ProjectTextContent(props) {
 
     return (
         <>
             <section className={classes['project-description']}>
-                <div>
-                    <ParagraphHeading>Lorem Ipsum Dolor Sit Amet</ParagraphHeading>
-                    <div>Pariatur proident et laborum non fugiat ex dolore sunt ad cupidatat Lorem proident. Aliqua reprehenderit veniam cillum ipsum eiusmod reprehenderit in esse voluptate. Consequat incididunt ut enim enim ex ex sunt adipisicing Lorem. Et aliqua culpa in proident consectetur et sunt.</div>
+                <div className={classes.row}>
+                    {props.heading && (<ParagraphHeading>{props.heading}</ParagraphHeading>)}
                 </div>
-                <div>Pariatur proident et laborum non fugiat ex dolore sunt ad cupidatat Lorem proident. Aliqua reprehenderit veniam cillum ipsum eiusmod reprehenderit in esse voluptate. Consequat incididunt ut enim enim ex ex sunt adipisicing Lorem. Et aliqua culpa in proident consectetur et sunt.</div>
-                <div>
-                    <div>www.website.com</div>
-                    <br></br>
-                    <div>Tools:
-                        <ul>
-                            <li>Lorem</li>
-                            <li>Ipsum</li>
-                            <li>Dolor</li>
-                            <li>Sit amet</li>
-                        </ul>
+
+                <div className={classes['row--with-columns']}>
+                    <div>
+                        <p>{props.paragraphOne}</p>
+                    </div>
+
+                    <div>
+                        <p>{props.paragraphTwo}</p>
+                    </div>
+
+                    <div>
+                        {props.url && (<div className={classes['link-wrapper']}><Link href={`https://${props.url}`} target="_blank">{props.url}</Link></div>)}
+
+                        {props.github && (<div className={classes['link-wrapper']}><Link href={`https://${props.github}`} target="_blank">{props.github}</Link></div>)}
+
+                        {props.tools && (
+                            <div>Built with:
+                                <ul>
+                                    {props.tools.map((tool) => (<li key={tool}>{tool}</li>))}
+                                </ul>
+                            </div>
+                        )}
+                        {props.paragraphThree && (<p>{props.paragraphThree}</p>)}
                     </div>
                 </div>
             </section>
