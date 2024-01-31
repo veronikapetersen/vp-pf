@@ -8,41 +8,49 @@ const ProjectsData = [
         url: "spotify-stats-ebon.vercel.app/",
         year: "2023"
     },
-
     {
         id: 1,
         slug: "kwr",
         title: "KWR",
         description: "Project 2 description",
         image: "project2.png",
-        url: "kwr.link.com",
+        // url: "kwr.link.com",
         github: "github.link",
         year: "2023",
-        tools: ["HTML5 (Twig)", "JavaScript", "Sass", "Python", "Google API", "MongoDB"],
+        tools: ["HTML5 (Twig)", "JavaScript", "Sass", "Python", "Google API", "x-spreadsheet", "tippy.js"],
+        feedback: {
+            name: "Emil Rømer Christensen",
+            position: "Head of Technology @ DEPT Agency",
+            quotes: [
+                { quote: "Veronika was part of a team of 2 that built an incredibly complex tool for making the lives easier for our Digital Marketing Consultants. The tool takes mundane tasks that would require hours and hours of manual labour and automates in seconds." },
+                { quote: "As part of the project Veronika had to fork and modify a poorly documented spreadsheet NPM package, and republish it in order to add missing functionality vital to the teams usage of the tool." },
+                { quote: "Was it not for Veronika's dedication and ability to come up with outside-the-box solutions, the project would have been cancelled." }
+            ]
+        },
+    
         images: [
             {
                 url: "kwr/opened_sheet.png",
-                img_description: "image description: lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                img_description: "KWR Tool interface with an opened spreadsheet.",
             },
             {
                 url: "kwr/code_structure.png",
                 img_description: "UI components written with JavaScript constructor method.",
             },
             {
-                url: "kwr/topmenu_v01.png",
+                url: "kwr/topmenu_v01_highlighted.png",
                 img_description: "The top menu bar dynamically displays the buttons depending on the selected tab.",
             },
             {
-                url: "kwr/topmenu_v02.png",
+                url: "kwr/topmenu_v02_highlighted.png",
                 img_description: "",
             },
             {
-                url: "kwr/topmenu_v03.png",
-                img_description: "",
+                url: "kwr/tooltip.png",
+                img_description: "Tooltips on hover"
             }
-
-
         ],
+
         text: [
             {
                 heading: "KWR Tool Overview",
@@ -61,14 +69,8 @@ const ProjectsData = [
             {
                 heading: "",
                 content: {
-                    0: "Content Copy Analysis: Once the keyword research process is completed, a user can evaluate the keywords usage in their content piece. The analysis feature is available through a text input, an attached Google Doc file, or via a direct URL to a product page.",
-                    1: "The tool will then generate an overview of the keywords that are present in the content piece, and provide a list of the keywords that are missing from the content."
-                },
-            },
-            {
-                heading: "Multi-Tab Workflow",
-                content: {
-                    0: "Each tab in the spreadsheet is dedicated to a specific stage of the keyword research process. As the user moves along the tabs, new extra keyword sorting features appear. The data in each tab is used to generate a comprehensive report in the following tab.",
+                    0: "Content Copy Analysis: Once the keyword research process is completed, a user can evaluate the keywords usage in their content piece. The analysis feature is available through a text input, an attached Google Doc file, or via a direct URL to a product page. The tool will then generate an overview of the keywords that are present in the content piece, and provide a list of the keywords that are missing from the content.",
+                    1: "Multi-Tab Workflow: Each tab in the spreadsheet is dedicated to a specific stage of the keyword research process. As the user moves along the tabs, new extra keyword sorting features appear. The data in each tab is used to generate a comprehensive report in the following tab."
                 },
             },
             {

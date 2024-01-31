@@ -1,0 +1,30 @@
+.quotes__wrapper {
+    margin: 60px 100px;
+
+    .quotes {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 1.2;
+        max-width: 700px;
+
+        &:before {
+            content: '“';
+            position: relative;
+            top: 50px;
+            right: 50px;
+            font-size: 100px;
+            display: flex;
+            line-height: 40px;
+        }
+
+        .single_quote {
+            margin-bottom: 26px;
+        }
+    }
+
+    .author {
+        line-height: 1;
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
