@@ -8,7 +8,7 @@ import 'swiper/scss/scrollbar';
 // import 'swiper/css/pagination';
 import { useRef, useEffect } from 'react';
 
-export default () => {
+export default function SwiperMenu() {
 
     const swiperRef = useRef(null);
 

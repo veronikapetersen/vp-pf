@@ -8,7 +8,7 @@ export default function ProjectTextContent(props) {
 
     return (
         <>
-            <section className={classes['project-description']}>
+            <div className={classes['project-description']}>
                 <div className={classes.row}>
                     {props.heading && (<ParagraphHeading>{props.heading}</ParagraphHeading>)}
                 </div>
@@ -37,7 +37,7 @@ export default function ProjectTextContent(props) {
                         {props.paragraphThree && (<p>{props.paragraphThree}</p>)}
                     </div>
                 </div>
-            </section>
+            </div>
         </>
     )
 }
