@@ -47,10 +47,24 @@ export default function Project({ params }) {
                 bottomHeading={bottomHeadingRef.current}
             ></Nav>
 
-            {ProjectsData.filter((project) => project.slug === params.slug).map((project, index) => (
-                <main key={index} ref={mainRef}>
-                    <ProjectPageLayout >
+            {ProjectsData.filter((project) => project.slug === params.slug).map((project) => (
+                <main key={project.id} ref={mainRef}>
+                    <ProjectPageLayout key={project.id} >
                         <ProjectHero title={project.title}></ProjectHero>
+
+                        <section>
+                            <ProjectTextContent
+                                heading={project.summary.heading}
+                                paragraphOne={project.summary.content[0]}
+                                paragraphTwo={project.summary.content[1]}
+                                paragraphThree={project.summary.content[2]}
+                                url={project.url}
+                                github={project.github}
+                                tools={project.tools}
+                            ></ProjectTextContent>
+
+                            <ProjectImage url={project.summary.images[0].url} description={project.summary.images[0].img_description} />
+                        </section>
 
                         {project.sections.map((section) => (
                             <section key={section.id}>
