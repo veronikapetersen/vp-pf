@@ -22,8 +22,8 @@ export function ProjectHeading1({ children }) {
             translateY: "25%",
             scrollTrigger: {
                 trigger: title,
-                start: "top 40%",
-                end: "top 20%",
+                start: "top 20%",
+                end: "top 2%",
                 scrub: 1,
                 // markers: true,
                 toggleActions: "none play reverse none",
@@ -45,7 +45,6 @@ export function ProjectHeading2(props) {
 
     return (
         <>
-
             <div className={`${classes['heading-wrapper']} ${classes['heading-wrapper--next']} ${archivo_black.className}`}>
 
                 <div className={classes['subheading']}>Next project</div>

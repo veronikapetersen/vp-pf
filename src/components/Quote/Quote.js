@@ -6,7 +6,7 @@ export default function Quote(props) {
             <section className={classes['quotes__wrapper']}>
                 <div className={classes.quotes}>
                     {props.quotes && (
-                        props.quotes.map((quote) => (<p className={classes['single_quote']}>{quote.quote}</p>))
+                        props.quotes.map((quote, index) => (<p key={index} className={classes['single_quote']}>{quote.quote}</p>))
                     )}
                 </div>
                 <div className={classes.author}>

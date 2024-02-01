@@ -39,66 +39,48 @@ export default function Project({ params }) {
 
     return (
         <>
-            {/* <Nav
+            <Nav
                 timeline={timeline}
                 bottom={true}
                 fadeNavLinks={true}
                 main={mainRef.current}
                 bottomHeading={bottomHeadingRef.current}
-            ></Nav> */}
+            ></Nav>
 
+            {ProjectsData.filter((project) => project.slug === params.slug).map((project, index) => (
+                <main key={index} ref={mainRef}>
+                    <ProjectPageLayout >
+                        <ProjectHero title={project.title}></ProjectHero>
 
-            <SwiperImages>
+                        {project.sections.map((section) => (
+                            <section key={section.id}>
+                                <ProjectTextContent
+                                    heading={section.heading}
+                                    paragraphOne={section.content[0]}
+                                    paragraphTwo={section.content[1]}
+                                    paragraphThree={section.content[2]}
+                                ></ProjectTextContent>
 
-            </SwiperImages>
+                                {section.images && section.images.length > 1 ? (
+                                    <SwiperImages images={section.images}></SwiperImages>
+                                ) : (
+                                    section.images && section.images.length === 1 && (
+                                        <ProjectImage url={section.images[0].url} description={section.images[0].img_description} />
+                                    )
+                                )}
 
-
+                            </section>
+                        ))}
+                        {project.feedback &&
+                            <Quote quotes={project.feedback.quotes} author={project.feedback.name} position={project.feedback.position}></Quote>
+                        }
+                        <div ref={bottomHeadingRef}>
+                            <ProjectHeading2 slug={nextProject.slug} heading={nextProject.title}></ProjectHeading2>
+                        </div>
+                    </ProjectPageLayout>
+                </main >
+            ))
+            }
         </>
     )
 }
-// {ProjectsData.filter((project) => project.slug === params.slug).map((project) => (
-//     <main key={project.id} ref={mainRef}>
-//         <ProjectPageLayout >
-//             {/* <ProjectHero title={project.title}></ProjectHero> */}
-
-//             {project.sections.map((section) => (
-//                 <>
-//                     <section key={section.id}>
-//                         <ProjectTextContent
-//                             heading={section.heading}
-//                             paragraphOne={section.content[0]}
-//                             paragraphTwo={section.content[1]}
-//                             paragraphThree={section.content[2]}
-//                         ></ProjectTextContent>
-
-
-//                         {section.images && section.images.length > 1 ? (
-//                             section.images.map((image) => (
-//                                 <ProjectImage key={image.id} url={image.url} description={image.img_description} />
-//                             ))
-//                         ) : (
-//                             section.images && section.images.length === 1 && (
-//                                 <img src={section.images[0].url} alt={section.images[0].img_description} />
-//                             )
-//                         )}
-
-//                     </section>
-//                 </>
-//             ))}
-
-//             {/* TODO: implement a swiper carousel here with dynamic text for each img */}
-//             {project.images &&
-//                 <ProjectImage url={project.images[2].url} description={project.images[2].img_description} />
-//                 /* <ProjectImage url={project.images[3].url} description={project.images[3].img_description} /> */
-//             }
-
-//             {project.feedback &&
-//                 <Quote quotes={project.feedback.quotes} author={project.feedback.name} position={project.feedback.position}></Quote>
-//             }
-//             <div ref={bottomHeadingRef}>
-//                 <ProjectHeading2 slug={nextProject.slug} heading={nextProject.title}></ProjectHeading2>
-//             </div>
-//         </ProjectPageLayout>
-//     </main >
-// ))
-// }

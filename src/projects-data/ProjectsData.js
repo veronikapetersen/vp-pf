@@ -81,7 +81,6 @@ const ProjectsData = [
                     },
                     {
                         url: "kwr/topmenu_v02_highlighted.png",
-                        img_description: "",
                     }
                 ]
             },

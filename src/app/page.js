@@ -4,7 +4,6 @@ import Nav from "@/components/Nav/Nav";
 import { useLayoutEffect, useState } from "react";
 import { gsap } from "gsap";
 import Menu from "@/components/Menu/Menu";
-// import SlideInHeading from "@/components/SlideInHeading/SlideInHeading";
 
 export default function Home() {
 
@@ -25,7 +24,6 @@ export default function Home() {
 
   return (
     <>
-      {/* <SlideInHeading></SlideInHeading> */}
       <Menu></Menu>
       <Nav
         timeline={timeline}
