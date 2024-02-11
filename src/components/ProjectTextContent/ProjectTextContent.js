@@ -15,11 +15,15 @@ export default function ProjectTextContent(props) {
 
                 <div className={classes['row--with-columns']}>
                     <div>
-                        <p>{props.paragraphOne}</p>
+                        {props.paragraphOne && (
+                            <p>{props.paragraphOne}</p>
+                        )}
                     </div>
 
                     <div>
-                        <p>{props.paragraphTwo}</p>
+                        {props.paragraphTwo && (
+                            <p>{props.paragraphTwo}</p>
+                        )}
                     </div>
 
                     <div>
