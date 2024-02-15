@@ -3,7 +3,7 @@ import { ProjectHeading1 } from "@/components/ProjectHeadings/ProjectHeadings";
 import BackButton from '@/components/Buttons/BackButton/BackButton';
 
 
-export default function ProjectHero({ title }) {
+export default function ProjectHero({ title, label }) {
 
     return (
         <div className={classes['project-hero']}>
@@ -13,6 +13,7 @@ export default function ProjectHero({ title }) {
                 </div>
                 <div className={classes['project-hero__title']}>
                     <ProjectHeading1>{title}</ProjectHeading1>
+                    {/* <div className={classes.label}>{label} project</div> */}
                 </div>
             </div>
         </div>

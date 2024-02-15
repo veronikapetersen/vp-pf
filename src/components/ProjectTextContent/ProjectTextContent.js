@@ -27,9 +27,18 @@ export default function ProjectTextContent(props) {
                     </div>
 
                     <div>
-                        {props.url && (<div className={classes['link-wrapper']}><Link href={`https://${props.url}`} target="_blank">{props.url}</Link></div>)}
+                        {props.url && (<div className={classes['link-wrapper']}>
+                            <Link href={`https://${props.url}`} target="_blank">
+                                www.{props.url}
+                            </Link>
+                        </div>)}
 
-                        {props.github && (<div className={classes['link-wrapper']}><Link href={`https://${props.github}`} target="_blank">{props.github}</Link></div>)}
+                        {props.github && (<div className={classes['link-wrapper']}>
+                            <Link href={`https://${props.github}`} target="_blank">
+                                View the code
+                                <span className={classes.icon}><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" /></svg></span>
+                            </Link>
+                        </div>)}
 
                         {props.tools && (
                             <div>Built with:

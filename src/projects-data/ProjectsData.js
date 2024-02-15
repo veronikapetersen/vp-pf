@@ -1,26 +1,133 @@
+import { images } from "../../next.config"
+
 const ProjectsData = [
     {
         id: 0,
         slug: "spotify-stats",
         title: "Spotify Stats",
         image: "",
+        // label: "personal",
         url: "spotify-stats-ebon.vercel.app/",
+        github: "github.com/veronikapetersen/spotify-stats-app",
         year: "2023",
-        tools: ["HTML5", "JavaScript", "Sass", "React", "Next.js", "Spotify API"],
+        tools: ["React / Next.js", "CSS Modules", "Spotify API", "NextAuth.js", "GSAP", "Swiper.js"],
+        summary: {
+            heading: "Spotify Stats Overview",
+            content: {
+                0: "Spotify Stats allows users to view the summary of their Spotify listening history, similar to the Spotify's Wrapped feature.",
+                1: "Developed as a personal hobby project, the website provides an opportunity for users to explore their Spotify statistics, thanks to the Spotify API integration.",
+            },
+            images: [
+                {
+                    url: "spotify/spotify1.png",
+                    img_description: "Spotify Stats interface: Hero component & Currently Playing section.",
+                },
+            ]
+        },
         sections: [
             {
                 id: 0,
-                heading: "Spotify Stats Overview",
+                heading: "Authentication",
                 content: {
-                    0: "Spotify Stats is a web app that allows users to view their Spotify listening history. The app displays the user's top artists and tracks, as well as their recently played tracks.",
-                    1: "The app is built with React and Next.js, and is deployed on Vercel.",
+                    0: "Thanks to NextAuth and the SpotifyProvider, users can securely log in to the application using their Spotify credentials. NextAuth streamlines the authentication process, ensuring a reliable and efficient user login experience.",
+                    1: " By employing the Spotify provider, the app seamlessly connects to users' Spotify accounts, allowing for the retrieval of personalized statistics.",
                 },
                 images: [
                     {
-                        url: "spotify-stats/spotify-stats.png",
-                        img_description: "Spotify Stats interface",
+                        url: "spotify/spotify8.png",
+                        img_description: "Login page with Spotify authentication, implemented with NextAuth.js.",
+                    },
+                    {
+                        url: "spotify/spotify9.png",
+                        img_description: "",
+                    }
+                ]
+            },
+            {
+                id: 1,
+                heading: "Spotify API Integration",
+                content: {
+                    0: "Currently Playing Track: Users can instantly view the song currently playing on their Spotify account, offering a real-time connection to their music experience.",
+                    1: "If the user is not listening to anything at the moment, the app displays the most recently played song instead.",
+                },
+                images: [
+                    {
+                        url: "spotify/spotify7.png",
+                        img_description: "Currently Playing track vs Recently Played track",
+                    },
+                    {
+                        url: "spotify/spotify6.png",
+                        img_description: "",
+                    }
+                ],
+            },
+            {
+                id: 2,
+                heading: "",
+                content: {
+                    0: "Top Artists: This section showcases the user's top 10 artists and their respective genres, presented in a swiper.js slider.",
+                    1: "",
+                },
+                images: [
+                    {
+                        url: "spotify/spotify2.png",
+                        img_description: "Certified BeyHive member 🐝",
                     },
                 ],
+            },
+            {
+                id: 3,
+                heading: "",
+                content: {
+                    0: "Top Tracks: Users can view their top 5 tracks, with the option to listen to a 30-sec preview of each song directly from the app.",
+                    1: "",
+                },
+                images: [
+                    {
+                        url: "spotify/spotify4.png",
+                        img_description: "",
+                    }
+                ]
+            },
+            {
+                id: 4,
+                heading: "Visual Effects & Animations",
+                content: {
+                    0: "Canvas-confetti: This NPM package brings a fun visual element to a component that shows how popular a user's top artist is. It's a simple yet playful way to visually represent and celebrate the popularity of the user's favorite artist based on the collective appeal of their tracks.",
+                    1: "With the help of GSAP library and its ScrollTrigger plugin, the text animation is added to the component, creating a dynamic and engaging user experience.",
+                },
+                images: [
+                    {
+                        url: "spotify/spotify3.png",
+                        img_description: "GSAP & ScrollTrigger text animation and canvas-confetti npm package in action.",
+                    }
+                ]
+            },
+            {
+                id: 5,
+                heading: "GSAP & ScrollTrigger",
+                content: {
+                    0: "GSAP animations and ScrollTrigger plugin are used to create a visually engaging experience, adding a dynamic touch to the website.",
+                    1: "In this project, GSAP is utilized to animate the text and background color, creating an eye-catching visual effect.",
+                },
+                images: [
+                    {
+                        url: "spotify/spotify10.png",
+                        img_description: "Background color changes from green to purple as the user scrolls down the page.",
+                    },
+                    {
+                        url: "spotify/spotify11.png",
+                        img_description: "",
+                    }
+                ]
+            },
+            {
+                id: 6,
+                heading: "Learning Experience",
+                content: {
+                    0: "Working on the Spotify Stats App allowed me to dive into Next.js and gain practical experience in integrating APIs. Navigating the ins and outs of Next.js, a powerful React framework, provided me a solid foundation for building dynamic web applications.",
+                    1: "Simultaneously, working with the Spotify API taught me how to effectively connect and retrieve data from external sources. This hands-on project significantly contributed to my skills as a frontend developer.",
+                },
             },
         ]
     },
@@ -289,7 +396,7 @@ const ProjectsData = [
         url: "dendansendeviking.dk",
         github: "",
         year: "2023",
-        tools: ["HTML5", "JavaScript", "Bootstrap", "swiper.js"],
+        tools: ["HTML5", "JavaScript", "Bootstrap", "Swiper.js"],
         summary: {
             heading: "Viking Bar Overview",
             content: {
@@ -311,14 +418,57 @@ const ProjectsData = [
                     0: "The design and aesthetics of the website underscore a visual narrative that resonates with the bar's character. The thematic choice leans heavily on a Viking style, where dark, rich colours evoke the mysterious essence of Norse culture. A careful integration of wood and paper textures brings a tactile and authentic feel to the website, mirroring the warmth of a traditional Viking setting.",
                     1: "The use of a Norse font adds a layer of historical authenticity, capturing the spirit of ancient runes. This design approach not only pays homage to the bar's thematic identity but also creates a visually compelling online presence that invites guests into the unique world of the Dancing Viking.",
                 },
+            },
+            {
+                id: 1,
+                heading: "",
+                content: {
+                    0: "",
+                    1: "",
+                },
+                images: [
+                    {
+                        url: "viking/viking3.png",
+                        img_description: "An image carousel, powered by swiper.js, adds a dynamic and visually appealing touch to the website.",
+                    },
+                ]
+            }
+        ]
+    },
 
-                // content: {
-                //     0: "Notable features include a detailed presentation of packages for private events, providing customers with a comprehensive overview of available options. Additionally, a carefully crafted image carousel, powered by swiper.js, adds a dynamic and visually appealing touch to the website.",
-                //     1: "",
-                // },
+    {
+        id: 4,
+        slug: "html5-banner-generator",
+        title: "HTML5 Banner Generator",
+        image: "",
+        url: "",
+        github: "github.com/veronikapetersen/html5banner",
+        year: "2022",
+        tools: ["HTML5 (Twig)", "CSS3", "Express.js (Node.js)", "Multer", "GSAP"],
+        summary: {
+            heading: "HTML5 Banner Ads Generator",
+            content: {
+                0: "During my internship, under the mentorship of a senior developer, I worked on development of an HTML5 Banner Ad Generator. This tool streamlines the often complex process of creating banner ads by providing a user-friendly interface.",
+                1: "This tool allows users to generate and download code for HTML5 banner ads used in display advertising."
+            },
+            images: [
+                {
+                    url: "banners/banners1.png",
+                    img_description: "",
+                },
+            ]
+        },
+        sections: [
+            {
+                id: 0,
+                heading: "Features & Functionality",
+                content: {
+                    0: "Animations & Layout: Users can dynamically customize their banners by selecting preferred animation and size/layout of the banner. The tool offers a range of animation options, such as fade in and slide in.",
+                    1: "Preview: The tool features an intuitive preview functionality, allowing users to visualize the banners they created and adjusting them as needed before downloading the final version of the generated code.",
+                },
                 // images: [
                 //     {
-                //         url: "viking/viking2.png",
+                //         url: "",
                 //         img_description: "",
                 //     },
                 // ]
@@ -327,80 +477,87 @@ const ProjectsData = [
                 id: 1,
                 heading: "",
                 content: {
-                    0: "An image carousel, powered by swiper.js, adds a dynamic and visually appealing touch to the website",
-                    1: "",
+                    0: "Assets: The user can upload their own images to be used in the banner. The upload works both as selecting from the folder and as a drag-and-drop.",
+                    1: "Download zipped generated code: The user can then generate the HTML5 code for the banner ad, which can be downloaded as a zip folder.",
                 },
                 images: [
                     {
-                        url: "viking/viking3.png",
+                        url: "banners/banners2.png",
                         img_description: "",
                     },
                 ]
             },
             {
                 id: 2,
-                // heading: "Design and Aesthetics",
+                heading: "Technology Stack",
                 content: {
-                    //     0: "The design and aesthetics of the website underscore a visual narrative that resonates with the bar's character. The thematic choice leans heavily on a Viking style, where dark, rich colours evoke the mysterious essence of Norse culture. A careful integration of wood and paper textures brings a tactile and authentic feel to the website, mirroring the warmth of a traditional Viking setting.",
-                    //     1: "The use of a Norse font adds a layer of historical authenticity, capturing the spirit of ancient runes and contributing to an immersive user experience. This design approach not only pays homage to the bar's thematic identity but also creates a visually compelling online presence that invites guests into the unique world of the Dancing Viking.",
+                    0: "Built on Express.js, the project leverages the capabilities of Node.js to deliver a robust web application.",
+                    1: "The use of Multer enhances the file upload process, ensuring a smooth and secure user experience.",
                 },
+                images: [
+                    {
+                        url: "banners/banners3.png",
+                        img_description: "App's file structure and routes",
+                    },
+                ]
+            },
+            {
+                id: 3,
+                heading: "Learning Experience",
+                content: {
+                    0: "This internship project offered valuable insights into the practical implementation of backend technologies and their seamless integration with frontend components. Working closely with a senior developer, I gained hands-on experience in developing full-stack solutions that balance user functionality and code efficiency.",
+                    1: "The collaborative environment fostered a deeper understanding of best practices in code organization, debugging, and optimization.",
+                },
+                // images: [
+                //     {
+                //         url: "",
+                //         img_description: "",
+                //     },
+                // ]
+            },
+            {
+                id: 4,
+                heading: "Impact & Future Enhancements",
+                content: {
+                    0: "The HTML5 Banner Ad Generator serves as a practical tool for marketing specialists and designers, facilitating the creation of customized banner ads without the need for extensive coding knowledge. The tool contributes to a simpler process for generating HTML5 banner ads, enhancing productivity for marketing teams.",
+                    1: "As the project evolves, there is potential for further enhancements, such as expanding animation options, refining the user interface, and incorporating additional features to cater to a broader range of banner ad requirements and various asset sizes.",
+                },
+                // images: [
+                //     {
+                //         url: "",
+                //         img_description: "",
+                //     },
+                // ]
             },
         ]
     },
 
-    {
-        id: 4,
-        slug: "html5-banner-generator",
-        title: "HTML5 Banner Generator",
-        image: "project5.png",
-        url: "https://www.google.com",
-        github: "github.link",
-        year: "2022",
-        tools: ["HTML5", "JavaScript",],
-        sections: [
-            {
-                id: 0,
-                heading: "",
-                content: {
-                    0: "",
-                    1: "",
-                },
-                images: [
-                    {
-                        url: "",
-                        img_description: "",
-                    },
-                ]
-            },
-        ]
-    },
-
-    {
-        id: 5,
-        slug: "yogaland",
-        title: "YogaLand",
-        image: "project6.png",
-        url: "https://www.google.com",
-        github: "github.link",
-        year: "2021",
-        tools: ["HTML5", "JavaScript",],
-        sections: [
-            {
-                id: 0,
-                heading: "",
-                content: {
-                    0: "",
-                    1: "",
-                },
-                images: [
-                    {
-                        url: "",
-                        img_description: "",
-                    },
-                ]
-            },
-        ]
-    }
+    // {
+    //     id: 5,
+    //     slug: "yogaland",
+    //     title: "YogaLand",
+    //     image: "project6.png",
+    //     url: "https://www.google.com",
+    //     github: "github.link",
+    //     year: "2021",
+    //     tools: ["HTML5", "JavaScript",],
+    //     sections: [
+    //         {
+    //             id: 0,
+    //             heading: "",
+    //             content: {
+    //                 0: "",
+    //                 1: "",
+    //             },
+    //             images: [
+    //                 {
+    //                     url: "",
+    //                     img_description: "",
+    //                 },
+    //             ]
+    //         },
+    //     ]
+    // }
 ]
 
 

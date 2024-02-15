@@ -78,18 +78,21 @@ export default function Nav(props) {
                 <div ref={column2} className={classes.column}>
                     <nav className={classes.nav}>
                         <ul className={classes['nav-list']}>
-                            <li className={classes['nav-list-item']}>
+                            {/* <li className={classes['nav-list-item']}>
                                 <a href="/">CV/Experience</a>
+                            </li> */}
+                            <li className={classes['nav-list-item']}>
+                                <a href="/">LinkedIn</a>
                             </li>
                             <li className={classes['nav-list-item']}>
-                                <a href="/about">LinkedIn</a>
+                                <a href="/">myemailhere@gmail.com</a>
                             </li>
                         </ul>
                     </nav>
                 </div>
 
                 <div ref={column3} className={classes.column}>
-                    <nav className={classes.nav}>
+                    {/* <nav className={classes.nav}>
                         <ul className={classes['nav-list']}>
                             <li className={classes['nav-list-item']}>
                                 <a href="/">myemailhere@gmail.com</a>
@@ -98,7 +101,7 @@ export default function Nav(props) {
                                 <a href="/about">+45 xxxx xxxx</a>
                             </li>
                         </ul>
-                    </nav>
+                    </nav> */}
                 </div>
             </div>
 

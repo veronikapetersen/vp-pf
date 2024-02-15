@@ -50,7 +50,8 @@ export default function Project({ params }) {
             {ProjectsData.filter((project) => project.slug === params.slug).map((project) => (
                 <main key={project.id} ref={mainRef}>
                     <ProjectPageLayout key={project.id} >
-                        <ProjectHero title={project.title}></ProjectHero>
+                        {/* <ProjectHero title={project.title} label={project.label}></ProjectHero> */}
+                        <ProjectHero title={project.title} ></ProjectHero>
 
                         <section>
                             <ProjectTextContent
