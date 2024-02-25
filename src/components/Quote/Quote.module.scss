@@ -1,20 +1,64 @@
-.quotes__wrapper {
-    margin: 60px 100px;
+@import '@/utils/mixins.scss';
+
+.wrapper {
+    @include contentMaxWidth(1600px);
+}
+
+.quotes__container {
+    @include margins;
+    padding: 0 20px;
+
+    @media (min-width: 576px) {
+        padding: 0;
+    }
 
     .quotes {
-        font-size: 30px;
         font-weight: 700;
-        line-height: 1.2;
+        line-height: 1.5;
+
         max-width: 700px;
+        font-size: 20px;
+
+        @media (min-width: 576px) {
+            font-size: 22px;
+        }
+
+        @media (min-width: 768px) {
+            font-size: 26px;
+        }
+
+        @media (min-width: 992px) {
+            font-size: 30px;
+        }
+
+        @media (min-width: 1200px) {}
+
+        @media (min-width: 1400px) {}
+
 
         &:before {
-            content: '“';
-            position: relative;
-            top: 50px;
-            right: 50px;
-            font-size: 100px;
             display: flex;
             line-height: 40px;
+            content: '“';
+            position: relative;
+            top: 38px;
+            right: 22px;
+            font-size: 50px;
+
+            @media (min-width: 576px) {}
+
+            @media (min-width: 768px) {
+                top: 46px;
+                right: 36px;
+                font-size: 80px;
+            }
+
+            @media (min-width: 992px) {
+                top: 50px;
+                right: 50px;
+                font-size: 100px;
+            }
+
         }
 
         .single_quote {

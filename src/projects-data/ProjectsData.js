@@ -6,7 +6,6 @@ const ProjectsData = [
         slug: "spotify-stats",
         title: "Spotify Stats",
         image: "",
-        // label: "personal",
         url: "spotify-stats-ebon.vercel.app/",
         github: "github.com/veronikapetersen/spotify-stats-app",
         year: "2023",
@@ -71,7 +70,7 @@ const ProjectsData = [
                 images: [
                     {
                         url: "spotify/spotify2.png",
-                        img_description: "Certified BeyHive member 🐝",
+                        img_description: "Certified 🐝 BeyHive member ",
                     },
                 ],
             },

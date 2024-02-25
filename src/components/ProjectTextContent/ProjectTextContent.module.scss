@@ -1,13 +1,65 @@
+@import '@/utils/mixins.scss';
+
+.wrapper {
+    @include contentMaxWidth(1600px);
+}
+
 .project-description {
-    margin: 60px 100px;
+    @include margins;
 
     .row {
         &--with-columns {
-            display: grid;
-            grid-template-columns: 2fr 2fr 170px;
-            column-gap: 30px;
+            display: flex;
+            flex-direction: column-reverse;
+
+            @include grid;
+
+            .texts {
+
+                @media (min-width: 1200px) {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    column-gap: 30px;
+                }
+            }
+
+            .text {
+                font-weight: 300;
+
+                &:not(:last-child) {
+
+                    margin-bottom: 30px;
+
+                    @media (min-width: 576px) {
+                        margin-bottom: 40px;
+                    }
+
+                    @media (min-width: 768px) {
+                        margin-bottom: 44px;
+                    }
+
+                    @media (min-width: 992px) {
+                        margin-bottom: 50px;
+                    }
+
+                    @media (min-width: 1200px) {
+                        margin-bottom: 0;
+                    }
+                }
+
+                &:not(.textExtra) {
+                    font-size: 18px;
+                    line-height: 1.8rem;
+                }
+
+                &.textExtra {
+                    font-size: 16px;
+                    line-height: 1.6rem;
+                }
+            }
 
             .link-wrapper {
+                font-weight: 500;
                 margin-bottom: 1rem;
 
                 a {
@@ -22,6 +74,18 @@
                             transform: translateX(10px);
                         }
                     }
+                }
+            }
+
+            .tools {
+                margin-bottom: 30px;
+
+                @media (min-width: 576px) {
+                    margin-bottom: 0;
+                }
+
+                span {
+                    font-weight: 500;
                 }
             }
         }

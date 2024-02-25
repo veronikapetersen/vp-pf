@@ -1,4 +1,4 @@
-import { Inter, Roboto, Rubik_Mono_One, Archivo_Black } from 'next/font/google'
+import { Inter, Roboto, Rubik_Mono_One, Archivo_Black, Rubik } from 'next/font/google'
 
 export const inter = Inter({ subsets: ['latin'] })
 
@@ -18,5 +18,12 @@ export const roboto = Roboto({
 export const archivo_black = Archivo_Black({ // project headings, menu items
     subsets: ['latin'],
     weight: ['400'],
+    display: 'swap'
+})
+
+export const rubik = Rubik({
+    subsets: ['latin'],
+    weight: ['300', '400', '500', '600', '700', '800', '900'],
+    style: ['normal', 'italic'],
     display: 'swap'
 })

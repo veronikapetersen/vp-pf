@@ -22,7 +22,6 @@ export default function BackButton() {
     return (
         <Link href="/">
             <button ref={buttonRef} className={classes['back-button']}>
-                {/* <button className={classes['back-button']}> */}
                 <img src="/assets/arrow_back.svg" alt="Back" />
             </button>
         </Link>

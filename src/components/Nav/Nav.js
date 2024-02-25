@@ -4,6 +4,7 @@ import classes from "./Nav.module.scss";
 import { useRef, useEffect } from "react";
 import Link from "next/link";
 import { roboto } from '@/utils/fonts';
+import { rubik } from '@/utils/fonts';
 
 import {
     setInitialStatesforMoveLogo, moveLogoDown, moveLogoUp,
@@ -61,7 +62,7 @@ export default function Nav(props) {
                     <Link href="/" >VP</Link></div>
             </div>
 
-            <div ref={columnsRef} className={classes.row}>
+            <div ref={columnsRef} className={`${classes.row} ${rubik.className}`}>
                 <div ref={column1} className={classes.column}>
                     <nav className={classes.nav}>
                         <ul className={classes['nav-list']}>
@@ -84,7 +85,7 @@ export default function Nav(props) {
                             <li className={classes['nav-list-item']}>
                                 <a href="/">LinkedIn</a>
                             </li>
-                            <li className={classes['nav-list-item']}>
+                            <li className={`${classes['nav-list-item']} ${classes.email}`}>
                                 <a href="/">myemailhere@gmail.com</a>
                             </li>
                         </ul>

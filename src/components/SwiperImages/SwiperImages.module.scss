@@ -1,34 +1,63 @@
+@import '@/utils/mixins.scss';
+
+.wrapper {
+    @include contentMaxWidth(1600px);
+}
+
 .swiper-images-container {
+    @include margins;
+    @include grid;
     box-sizing: border-box;
-    margin: 60px 100px;
-    display: grid;
-    grid-template-columns: 4fr 170px;
-    column-gap: 30px;
 
     .swiper-images {
         min-width: 0; // prevents overflow caused by display grid on parent element
         padding: 5px;
         background-color: white;
 
-        .slide {
-            img {
-                width: 100%;
-            }
+        .slide img {
+            width: 100%;
         }
     }
 
-    .nav-buttons-container {
+    .info {
         display: flex;
-        align-items: center;
-        margin-bottom: 16px;
+        flex-direction: row-reverse;
+        margin-top: 10px;
+        justify-content: space-between;
 
-        :global(.swiper-pagination-fraction) {
-            width: auto !important;
-            padding: 0 16px !important;
+        @media (min-width: 576px) {
+            display: block;
+            margin-top: 0;
         }
 
-        .nav-btn {
-            cursor: pointer;
+        .nav-buttons-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 16px;
+            font-size: 12px;
+            margin-left: 50px;
+
+            @media (min-width: 576px) {
+                margin-left: 0;
+            }
+
+            :global(.swiper-pagination-fraction) {
+                width: auto !important;
+                padding: 0 12px !important;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .nav-btn {
+                cursor: pointer;
+            }
+        }
+
+        .description {
+            font-size: 14px;
+            font-weight: 300;
         }
     }
 }

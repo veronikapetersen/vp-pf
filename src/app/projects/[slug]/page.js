@@ -50,7 +50,6 @@ export default function Project({ params }) {
             {ProjectsData.filter((project) => project.slug === params.slug).map((project) => (
                 <main key={project.id} ref={mainRef}>
                     <ProjectPageLayout key={project.id} >
-                        {/* <ProjectHero title={project.title} label={project.label}></ProjectHero> */}
                         <ProjectHero title={project.title} ></ProjectHero>
 
                         <section>
@@ -58,7 +57,7 @@ export default function Project({ params }) {
                                 heading={project.summary.heading}
                                 paragraphOne={project.summary.content[0]}
                                 paragraphTwo={project.summary.content[1]}
-                                paragraphThree={project.summary.content[2]}
+                                // paragraphThree={project.summary.content[2]}
                                 url={project.url}
                                 github={project.github}
                                 tools={project.tools}
@@ -73,7 +72,7 @@ export default function Project({ params }) {
                                     heading={section.heading}
                                     paragraphOne={section.content[0]}
                                     paragraphTwo={section.content[1]}
-                                    paragraphThree={section.content[2]}
+                                    // paragraphThree={section.content[2]}
                                 ></ProjectTextContent>
 
                                 {section.images && section.images.length > 1 ? (

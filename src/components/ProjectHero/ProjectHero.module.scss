@@ -1,28 +1,13 @@
+@import '@/utils/mixins.scss';
+
 .project-hero {
-    // position: relative;
     width: 100%;
     border: 1px solid #80808066;
-    padding: 60px 0;
     background-color: rgb(238, 238, 238);
 
+    padding: 20px 0;
+
     &__content {
-        // border: 1px solid red;
-
-        .btn {
-            text-align: right;
-            margin: 0 3rem;
-        }
-
-        // .label {
-        //     text-align: right;
-        //     margin: 0 3rem;
-        //     color: grey;
-        //     font-size: 14px;
-        // }
+        @include contentMaxWidth(576px);
     }
-
-
-    // &__title {
-    //     border: 1px solid blue;
-    // }
 }
