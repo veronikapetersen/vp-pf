@@ -7,7 +7,8 @@
     perspective: 100vw;
 
     .stage {
-        margin: 120px 30px 120px 10px;
+        margin: 130px 30px 120px 10px;
+        // margin: 180px 30px 120px 10px;
         transform-style: preserve-3d;
 
         @media (min-width: 768px) {

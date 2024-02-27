@@ -17,7 +17,10 @@ export default function Menu() {
         const menulinksArray = Array.from(list);
 
         gsap.set(menulinksArray, { opacity: 0, y: '150vh', rotateY: '-90deg' });
-        gsap.to(menulinksArray, { y: 0, opacity: 1, rotateY: '-45deg', stagger: 0.1, duration: 2, ease: "power3.inOut", delay: 0.2 });
+        gsap.to(menulinksArray, {
+            y: 0, opacity: 1, rotateY: '-45deg',
+            stagger: 0.1, duration: 2, ease: "power3.inOut", delay: 0.2
+        });
 
     }, []);
 
