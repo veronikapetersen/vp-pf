@@ -1,13 +1,148 @@
-.header {
-    width: 100%;
-    max-width: 700px;
-    // z-index: 99;
-    padding: 10px 10px;
-    // mix-blend-mode: overlay;
-    // color: black;
+.header-mobile {
 
     @media (min-width: 768px) {
+        display: none;
+    }
+
+    width: 100%;
+    position: absolute;
+    z-index: 99;
+
+    .logo-wrapper-mobile {
+        padding-left: 10px;
+
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
+
+
+    .menu-mobile {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 1rem;
+        z-index: 89;
+        padding-left: 40px;
+
+        .menu-item {
+            opacity: 0;
+            z-index: inherit;
+            color: white;
+            font-weight: 300;
+
+            &:nth-child(1) {
+                font-size: 1.6rem;
+            }
+
+            &:nth-child(2) {
+                margin-bottom: 16px;
+            }
+
+            &:nth-child(3),
+            &:nth-child(4) {
+                padding: 10px 0;
+                font-weight: 400;
+            }
+        }
+    }
+
+
+    .burgerIconWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media (min-width: 768px) {
+            display: none;
+        }
+
+        .burgerIcon {
+            padding: 10px 10px;
+            cursor: pointer;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 99;
+
+            .open {
+                svg {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+
+            .close {
+                svg {
+                    width: 30px;
+                    height: 30px;
+                    fill: white;
+                }
+            }
+        }
+    }
+
+    .stairs {
+        top: 0;
+        left: 0;
+        position: fixed;
+        z-index: 2;
+        display: flex;
+        pointer-events: none;
+
+        .stair {
+            @media (min-width: 768px) {
+                display: none;
+            }
+
+            width: 20vw;
+            height: 100%;
+            background-color: black;
+        }
+    }
+
+}
+
+
+.header-desktop {
+
+    width: 100%;
+    position: absolute;
+    z-index: 99;
+    display: none;
+
+    @media (min-width: 768px) {
+        display: block;
         padding: 20px 10px;
+
+        &.top-position {
+            position: fixed;
+            top: 0;
+        }
+
+        &.bottom-position {
+            position: fixed;
+            bottom: 0;
+        }
+
+        &.slideUp {
+            position: fixed;
+            bottom: 0;
+
+            .logo-wrapper-desktop {
+                overflow: hidden;
+            }
+
+            .logo,
+            .column {
+                transform: translateY(120%);
+            }
+        }
     }
 
     @media (min-width: 992px) {
@@ -18,64 +153,46 @@
         padding: 40px 80px;
     }
 
-    .logo {
-        font-weight: bold;
-        font-size: 2rem;
+
+    .menu-desktop {
+        max-width: 500px;
+        overflow: hidden;
+        display: none;
 
         @media (min-width: 768px) {
-            font-size: 3rem;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
         }
 
-        @media (min-width: 992px) {
-            font-size: 4rem;
+        .nav {
+            font-size: 14px;
+            font-weight: 300;
         }
+    }
+}
 
-        a {
-            -webkit-text-stroke: 2px black;
-            transition: color 0.4s cubic-bezier(.075, .82, .165, 1);
 
+.logo {
+    font-weight: bold;
+    font-size: 2rem;
+
+    @media (min-width: 768px) {
+        font-size: 3rem;
+    }
+
+    @media (min-width: 992px) {
+        font-size: 4rem;
+    }
+
+    a {
+        -webkit-text-stroke: 2px black;
+        transition: color 0.4s cubic-bezier(.075, .82, .165, 1);
+
+        @media (hover: hover) {
             &:hover {
                 color: transparent;
             }
         }
-    }
-
-    .row {
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        overflow: hidden;
-    }
-
-    .nav {
-        font-size: 14px;
-        font-weight: 300;
-
-        .email {
-            font-weight: 500;
-        }
-    }
-
-    position: fixed;
-}
-
-.top-position {
-    top: 0;
-}
-
-.bottom-position {
-    bottom: 0;
-}
-
-.slideUp {
-    bottom: 0;
-
-    .logo-wrapper {
-        overflow: hidden;
-    }
-
-    .logo,
-    .column {
-        transform: translateY(120%);
     }
 }

@@ -72,7 +72,7 @@ export default function Project({ params }) {
                                     heading={section.heading}
                                     paragraphOne={section.content[0]}
                                     paragraphTwo={section.content[1]}
-                                    // paragraphThree={section.content[2]}
+                                // paragraphThree={section.content[2]}
                                 ></ProjectTextContent>
 
                                 {section.images && section.images.length > 1 ? (

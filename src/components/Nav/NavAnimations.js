@@ -35,30 +35,22 @@ export const moveLogoUp = (headerRef) => {
     return tl;
 };
 
-export const setInitialStatesForSlideUp = (logoRef, column1Ref, column2Ref, column3Ref) => {
-    gsap.set([logoRef, column1Ref, column2Ref, column3Ref], {
+export const setInitialStatesForSlideUp = (logoRef, column1Ref, column2Ref) => {
+    gsap.set([logoRef, column1Ref, column2Ref], {
         transform: `translateY(120%)`
     });
 };
 
-export const slideLogoUp = (logoRef, column1Ref, column2Ref, column3Ref, delay = 0.2) => {
+export const slideLogoUp = (logoRef, column1Ref, column2Ref, delay = 0.2) => {
     const tl = gsap.timeline();
 
-    tl
-        // .to(logoRef, {
-        //     duration: 1,
-        //     // delay: 0.2,
-        //     delay,
-        //     transform: `translateY(0)`,
-        //     ease: "power2.inOut"
-        // })
-        .to([logoRef, column1Ref, column2Ref, column3Ref], {
-            duration: 1,
-            delay,
-            transform: `translateY(0)`,
-            ease: "power2.inOut",
-            stagger: 0.2
-        })
+    tl.to([logoRef, column1Ref, column2Ref], {
+        duration: 1,
+        delay,
+        transform: `translateY(0)`,
+        ease: "power2.inOut",
+        stagger: 0.2
+    })
     return tl;
 };
 

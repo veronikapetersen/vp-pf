@@ -1,9 +1,9 @@
 'use client';
 
-import Nav from "@/components/Nav/Nav";
 import { useLayoutEffect, useState } from "react";
 import { gsap } from "gsap";
 import Menu from "@/components/Menu/Menu";
+import Nav from "@/components/Nav/Nav";
 
 export default function Home() {
 
@@ -24,11 +24,7 @@ export default function Home() {
 
   return (
     <>
-      <Nav
-        timeline={timeline}
-        slideUp={true}
-        delay={1.8}
-      ></Nav>
+      <Nav timeline={timeline} slideUp={true} delay={1.8}></Nav>
       <Menu></Menu>
     </>
   )
