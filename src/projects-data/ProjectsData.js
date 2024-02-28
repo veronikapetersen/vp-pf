@@ -133,7 +133,9 @@ const ProjectsData = [
     {
         id: 1,
         slug: "kwr",
-        title: "KWR",
+        // title: "KWR",
+        // title: "Keyword Research Tool",
+        title: "KWR Tool",
         image: "",
         url: "",
         github: "",
@@ -145,7 +147,7 @@ const ProjectsData = [
             quotes: [
                 { quote: "Veronika was part of a team of 2 that built an incredibly complex tool for making the lives easier for our Digital Marketing Consultants. The tool takes mundane tasks that would require hours and hours of manual labour and automates in seconds." },
                 { quote: "As part of the project Veronika had to fork and modify a poorly documented spreadsheet NPM package, and republish it in order to add missing functionality vital to the teams usage of the tool." },
-                { quote: "Was it not for Veronika's dedication and ability to come up with outside-the-box solutions, the project would have been cancelled." }
+                // { quote: "Was it not for Veronika's dedication and ability to come up with outside-the-box solutions, the project would have been cancelled." }
             ]
         },
         summary: {
@@ -243,7 +245,7 @@ const ProjectsData = [
     {
         id: 2,
         slug: "erst",
-        title: "ERST",
+        title: "ERST Intranet",
         image: "",
         url: "",
         github: "",

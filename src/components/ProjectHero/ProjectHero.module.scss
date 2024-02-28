@@ -2,12 +2,9 @@
 
 .project-hero {
     width: 100%;
-    border: 1px solid #80808066;
-    background-color: rgb(238, 238, 238);
-
     padding: 20px 0;
 
     &__content {
-        @include contentMaxWidth(576px);
+        @include contentMaxWidth(1600px);
     }
 }

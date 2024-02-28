@@ -129,28 +129,29 @@ export default function Nav(props) {
                 ref={headerRef}
                 className={`${classes['header-desktop']} ${props.top ? classes['top-position'] : props.bottom ? classes['bottom-position'] : props.slideUp ? classes.slideUp : ''}`}
             >
-
-                <div className={`${classes['logo-wrapper-desktop']} ${roboto.className}`}>
-                    <div ref={logoRefDesktop} className={classes.logo}><Link href="/" >VP</Link></div>
-                </div>
-
-                <div ref={desktopMenuRef} className={`${classes['menu-desktop']} ${rubik.className}`}>
-                    <div ref={column1} className={classes.column}>
-                        <nav className={classes.nav}>
-                            <ul className={classes['nav-list']}>
-                                <li className={classes['nav-list-item']}><div>Veronika Petersen</div></li>
-                                <li className={classes['nav-list-item']}><div>Frontend Developer</div></li>
-                            </ul>
-                        </nav>
+                <div className={classes.centered}>
+                    <div className={`${classes['logo-wrapper-desktop']} ${roboto.className}`}>
+                        <div ref={logoRefDesktop} className={classes.logo}><Link href="/" >VP</Link></div>
                     </div>
 
-                    <div ref={column2} className={classes.column}>
-                        <nav className={classes.nav}>
-                            <ul className={classes['nav-list']}>
-                                <li className={`${classes['nav-list-item']}`}><a href="/">LinkedIn</a></li>
-                                <li className={`${classes['nav-list-item']}`}><a href="/">myemailhere@gmail.commmm</a></li>
-                            </ul>
-                        </nav>
+                    <div ref={desktopMenuRef} className={`${classes['menu-desktop']} ${rubik.className}`}>
+                        <div ref={column1} className={classes.column}>
+                            <nav className={classes.nav}>
+                                <ul className={classes['nav-list']}>
+                                    <li className={classes['nav-list-item']}><div>Veronika Petersen</div></li>
+                                    <li className={classes['nav-list-item']}><div>Frontend Developer</div></li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <div ref={column2} className={classes.column}>
+                            <nav className={classes.nav}>
+                                <ul className={classes['nav-list']}>
+                                    <li className={`${classes['nav-list-item']}`}><a href="/">LinkedIn</a></li>
+                                    <li className={`${classes['nav-list-item']}`}><a href="/">myemailhere@gmail.commmm</a></li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </header>

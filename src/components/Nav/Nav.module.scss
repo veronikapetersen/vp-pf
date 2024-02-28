@@ -1,3 +1,5 @@
+@import '@/utils/mixins.scss';
+
 .header-mobile {
 
     @media (min-width: 768px) {
@@ -15,7 +17,6 @@
             display: none;
         }
     }
-
 
     .menu-mobile {
         position: fixed;
@@ -51,7 +52,6 @@
             }
         }
     }
-
 
     .burgerIconWrapper {
         display: flex;
@@ -105,12 +105,9 @@
             background-color: black;
         }
     }
-
 }
 
-
 .header-desktop {
-
     width: 100%;
     position: absolute;
     z-index: 99;
@@ -150,9 +147,12 @@
     }
 
     @media (min-width: 1200px) {
-        padding: 40px 80px;
+        padding: 40px 10px;
     }
 
+    .centered {
+        @include contentMaxWidth(1600px);
+    }
 
     .menu-desktop {
         max-width: 500px;
