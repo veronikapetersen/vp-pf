@@ -13,6 +13,7 @@
         min-width: 0; // prevents overflow caused by display grid on parent element
         padding: 5px;
         background-color: white;
+        opacity: 0;
 
         .slide img {
             width: 100%;
@@ -24,10 +25,26 @@
         flex-direction: row-reverse;
         margin-top: 10px;
         justify-content: space-between;
+        opacity: 1;
+
+
+
+        transform-style: preserve-3d;
+        perspective: 100vw;
 
         @media (min-width: 576px) {
             display: block;
             margin-top: 0;
+        }
+
+
+        .info-wrapper {
+            transform: rotateY(45deg);
+            transform-origin: left center;
+            transform-style: preserve-3d;
+            transition: all 1.5s cubic-bezier(.075, .82, .165, 1);
+            will-change: transform;
+            opacity: 0;
         }
 
         .nav-buttons-container {

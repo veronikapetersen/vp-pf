@@ -57,13 +57,12 @@ export default function Project({ params }) {
                                 heading={project.summary.heading}
                                 paragraphOne={project.summary.content[0]}
                                 paragraphTwo={project.summary.content[1]}
-                                // paragraphThree={project.summary.content[2]}
                                 url={project.url}
                                 github={project.github}
                                 tools={project.tools}
                             ></ProjectTextContent>
 
-                            <ProjectImage url={project.summary.images[0].url} description={project.summary.images[0].img_description} />
+                            <ProjectImage summary={true} url={project.summary.images[0].url} description={project.summary.images[0].img_description} />
                         </section>
 
                         {project.sections.map((section) => (
@@ -72,7 +71,6 @@ export default function Project({ params }) {
                                     heading={section.heading}
                                     paragraphOne={section.content[0]}
                                     paragraphTwo={section.content[1]}
-                                // paragraphThree={section.content[2]}
                                 ></ProjectTextContent>
 
                                 {section.images && section.images.length > 1 ? (

@@ -19,6 +19,8 @@
         img {
             width: 100%;
         }
+
+        opacity: 0;
     }
 
     &__description {
@@ -28,6 +30,15 @@
 
         @media (min-width: 576px) {
             margin-top: 0;
+        }
+
+        transform-style: preserve-3d;
+        perspective: 100vw;
+
+        p {
+            opacity: 0;
+            transform: rotateY(45deg);
+            transform-origin: left center;
         }
     }
 }
