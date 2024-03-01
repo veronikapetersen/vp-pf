@@ -14,16 +14,19 @@ export default function BackButton() {
             .to(buttonRef.current, {
                 duration: 1,
                 delay: 2,
-                right: "60px",
+                right: "16px",
                 ease: "power4.inOut"
             });
     }, []);
 
     return (
-        <Link href="/">
-            <button ref={buttonRef} className={classes['back-button']}>
-                <img src="/assets/arrow_back.svg" alt="Back" />
-            </button>
-        </Link>
+        <div className={classes.wrapper}>
+
+            <Link className={classes.link} href="/">
+                <button ref={buttonRef} className={classes['back-button']}>
+                    <img src="/assets/arrow_back.svg" alt="Back" />
+                </button>
+            </Link>
+        </div>
     );
 }

@@ -7,7 +7,6 @@ import classes from './Nav.module.scss';
 
 import { useEffect, useRef, useState } from 'react';
 
-
 import {
     setInitialStatesforMoveLogo, moveLogoDown, moveLogoUp,
     setInitialStatesForSlideUp, slideLogoUp,
@@ -129,6 +128,7 @@ export default function Nav(props) {
                 ref={headerRef}
                 className={`${classes['header-desktop']} ${props.top ? classes['top-position'] : props.bottom ? classes['bottom-position'] : props.slideUp ? classes.slideUp : ''}`}
             >
+
                 <div className={classes.centered}>
                     <div className={`${classes['logo-wrapper-desktop']} ${roboto.className}`}>
                         <div ref={logoRefDesktop} className={classes.logo}><Link href="/" >VP</Link></div>
