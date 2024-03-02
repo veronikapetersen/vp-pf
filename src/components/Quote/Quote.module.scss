@@ -2,6 +2,9 @@
 
 .wrapper {
     @include contentMaxWidth(1600px);
+
+    transform-style: preserve-3d;
+    perspective: 100vw;
 }
 
 .quotes__container {
@@ -71,4 +74,12 @@
         font-size: 16px;
         font-weight: 500;
     }
+
+
+    transform: rotateY(45deg);
+    transform-origin: left center;
+    transform-style: preserve-3d;
+    transition: all 1.5s cubic-bezier(.075, .82, .165, 1);
+    will-change: transform;
+    opacity: 0;
 }

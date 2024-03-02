@@ -9,6 +9,9 @@
 
 
     .row {
+        opacity: 0;
+        transform: translateY(30px);
+
         &--with-columns {
             display: flex;
             flex-direction: column-reverse;
@@ -25,6 +28,9 @@
             }
 
             .text {
+                opacity: 0;
+                transform: translateY(30px);
+
                 font-weight: 300;
 
                 &:not(:last-child) {

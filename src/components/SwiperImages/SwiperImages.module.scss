@@ -21,24 +21,20 @@
     }
 
     .info {
-        display: flex;
-        flex-direction: row-reverse;
-        margin-top: 10px;
-        justify-content: space-between;
-        opacity: 1;
-
-
-
         transform-style: preserve-3d;
         perspective: 100vw;
 
-        @media (min-width: 576px) {
-            display: block;
-            margin-top: 0;
-        }
-
-
         .info-wrapper {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-top: 10px;
+            justify-content: space-between;
+
+            @media (min-width: 576px) {
+                display: block;
+                margin-top: 0;
+            }
+
             transform: rotateY(45deg);
             transform-origin: left center;
             transform-style: preserve-3d;

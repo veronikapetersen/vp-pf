@@ -2,11 +2,73 @@ import { roboto } from '@/utils/fonts';
 import { rubik } from '@/utils/fonts';
 import classes from './ProjectTextContent.module.scss';
 import Link from 'next/link';
+import { useRef, useEffect } from "react";
 
 import ParagraphHeading from '@/components/ParagraphHeading/ParagraphHeading';
 
+import gsap from 'gsap';
+
 
 export default function ProjectTextContent(props) {
+
+    const titleRef = useRef(null);
+    const sectionOneRef = useRef(null);
+    const sectionTwoRef = useRef(null);
+    const sectionThreeRef = useRef(null);
+
+    useEffect(() => {
+
+        gsap.to(titleRef.current, {
+            opacity: 1,
+            translateY: 0,
+            scrollTrigger: {
+                trigger: titleRef.current,
+                start: "top 80%",
+                end: "top 70%",
+                scrub: 1,
+                // markers: true,
+                toggleActions: "none play reverse none",
+            }
+        });
+        gsap
+            .to(sectionOneRef.current, {
+                opacity: 1,
+                translateY: 0,
+                scrollTrigger: {
+                    trigger: sectionOneRef.current,
+                    start: "top 80%",
+                    end: "top 70%",
+                    scrub: 1,
+                    // markers: true,
+                    toggleActions: "none play reverse none",
+                }
+            });
+        gsap.to(sectionTwoRef.current, {
+            opacity: 1,
+            translateY: 0,
+            scrollTrigger: {
+                trigger: sectionTwoRef.current,
+                start: "top 75%",
+                end: "top 60%",
+                scrub: 1,
+                // markers: true,
+                toggleActions: "none play reverse none",
+            }
+        })
+
+        gsap.to(sectionThreeRef.current, {
+            opacity: 1,
+            translateY: 0,
+            scrollTrigger: {
+                trigger: sectionThreeRef.current,
+                start: "top 70%",
+                end: "top 60%",
+                scrub: 1,
+                // markers: true,
+                toggleActions: "none play reverse none",
+            }
+        })
+    }, [])
 
     return (
         <>
@@ -15,27 +77,27 @@ export default function ProjectTextContent(props) {
                     <div className={classes['project-description']}>
 
                         {props.heading &&
-                            <div className={classes.row}>
+                            <div ref={titleRef} className={classes.row}>
                                 <ParagraphHeading>{props.heading}</ParagraphHeading>
                             </div>
                         }
 
                         <div className={`${classes['row--with-columns']} ${rubik.className}`}>
                             <div className={classes.texts}>
-                                <div className={classes.text}>
+                                <div ref={sectionOneRef} className={classes.text}>
                                     {props.paragraphOne && props.paragraphOne !== "" && (
                                         <p>{props.paragraphOne}</p>
                                     )}
                                 </div>
 
-                                <div className={classes.text}>
+                                <div ref={sectionTwoRef} className={classes.text}>
                                     {props.paragraphTwo && (
                                         <p>{props.paragraphTwo}</p>
                                     )}
                                 </div>
                             </div>
 
-                            <div className={`${classes.text} ${classes.textExtra}`}>
+                            <div ref={sectionThreeRef} className={`${classes.text} ${classes.textExtra}`}>
 
                                 {props.url && (<div className={classes['link-wrapper']}>
                                     <Link href={`https://${props.url}`} target="_blank">
@@ -57,7 +119,6 @@ export default function ProjectTextContent(props) {
                                         </ul>
                                     </div>
                                 )}
-                                {/* {props.paragraphThree && (<p>{props.paragraphThree}</p>)} */}
                             </div>
                         </div>
                     </div>
