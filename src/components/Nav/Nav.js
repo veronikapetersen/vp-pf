@@ -105,7 +105,6 @@ export default function Nav(props) {
 
             return props.timeline;
         } else if (props.timeline && props.slideUp) {
-            console.log('slide up')
             props.timeline
                 .add(setInitialStatesForSlideUp(logoRefDesktop.current, column1.current, column2.current))
                 .add(slideLogoUp(logoRefDesktop.current, column1.current, column2.current))
