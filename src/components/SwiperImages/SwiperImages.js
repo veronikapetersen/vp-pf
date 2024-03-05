@@ -10,6 +10,8 @@ import { rubik } from '@/utils/fonts';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+import { useGSAP } from '@gsap/react';
+
 
 export default function SwiperImages(props) {
 
@@ -20,19 +22,20 @@ export default function SwiperImages(props) {
     const swiperRef = useRef(null);
     const swiperInfo = useRef(null);
 
-    useEffect(() => {
-        gsap
-            .to(swiperRef.current, {
-                opacity: 1,
-                scrollTrigger: {
-                    trigger: swiperRef.current,
-                    start: "top 80%",
-                    end: "top 70%",
-                    scrub: 1,
-                    // markers: true,
-                    toggleActions: "none play reverse none",
-                }
-            });
+    const wrapperRef = useRef(null);
+
+    useGSAP(() => {
+        gsap.to(swiperRef.current, {
+            opacity: 1,
+            scrollTrigger: {
+                trigger: swiperRef.current,
+                start: "top 80%",
+                end: "top 70%",
+                scrub: 1,
+                // markers: true,
+                toggleActions: "none play reverse none",
+            }
+        });
         gsap.to(swiperInfo.current, {
             opacity: 1,
             rotateY: 0,
@@ -45,10 +48,10 @@ export default function SwiperImages(props) {
                 toggleActions: "none play reverse none",
             }
         })
-    }, [])
+    }, { scope: wrapperRef })
 
     return (
-        <div className={classes.wrapper}>
+        <div ref={wrapperRef} className={classes.wrapper}>
             <div className={`${classes['swiper-images-container']} ${rubik.className}`}>
                 <div ref={swiperRef} className={classes['swiper-images']}>
                     <Swiper

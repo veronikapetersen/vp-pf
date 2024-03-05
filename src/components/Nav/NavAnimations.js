@@ -6,26 +6,12 @@ export const setInitialStatesforMoveLogo = (headerRef) => {
     gsap.set(headerRef, { scale: 1 });
 };
 
-// export const moveLogoDown = (headerRef, headerRefHeight) => {
-//     const tl = gsap.timeline();
-
-//     tl.to(headerRef, {
-//         duration: 1,
-//         delay: 1,
-//         top: `calc(100vh - ${headerRefHeight}px)`,
-//         transformOrigin: "center center",
-//         ease: "power4.out"
-//     });
-
-//     return tl;
-// };
-
 export const moveLogoUp = (headerRef) => {
     const tl = gsap.timeline();
 
     tl.to(headerRef, {
         duration: 0.8,
-        delay: 0.5,
+        delay: 0.2,
         top: 0,
         bottom: "auto",
         transformOrigin: "center center",

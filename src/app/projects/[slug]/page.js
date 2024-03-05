@@ -53,6 +53,7 @@ export default function Project({ params }) {
 
                         <section>
                             <ProjectTextContent
+                                summary={true}
                                 heading={project.summary.heading}
                                 paragraphOne={project.summary.content[0]}
                                 paragraphTwo={project.summary.content[1]}

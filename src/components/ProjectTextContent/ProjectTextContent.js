@@ -1,12 +1,14 @@
-import { roboto } from '@/utils/fonts';
 import { rubik } from '@/utils/fonts';
 import classes from './ProjectTextContent.module.scss';
 import Link from 'next/link';
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 
 import ParagraphHeading from '@/components/ParagraphHeading/ParagraphHeading';
 
 import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+import { useGSAP } from '@gsap/react';
 
 
 export default function ProjectTextContent(props) {
@@ -16,22 +18,62 @@ export default function ProjectTextContent(props) {
     const sectionTwoRef = useRef(null);
     const sectionThreeRef = useRef(null);
 
-    useEffect(() => {
+    const wrapperRef = useRef(null);
 
-        gsap.to(titleRef.current, {
-            opacity: 1,
-            translateY: 0,
-            scrollTrigger: {
-                trigger: titleRef.current,
-                start: "top 80%",
-                end: "top 70%",
-                scrub: 1,
-                // markers: true,
-                toggleActions: "none play reverse none",
-            }
-        });
-        gsap
-            .to(sectionOneRef.current, {
+    if (props.summary) {
+        useGSAP(() => {
+            gsap.to(titleRef.current, {
+                opacity: 1,
+                translateY: 0,
+                duration: 1,
+                delay: 0.4,
+                ease: "power3.inOut"
+            });
+
+            gsap.to(sectionOneRef.current, {
+                opacity: 1,
+                translateY: 0,
+                ease: "power3.inOut",
+                duration: 1,
+                delay: 0.4
+            });
+
+            gsap.to(sectionTwoRef.current, {
+                opacity: 1,
+                translateY: 0,
+                ease: "power3.inOut",
+                duration: 1,
+                delay: 0.6
+            })
+
+            gsap.to(sectionThreeRef.current, {
+                opacity: 1,
+                translateY: 0,
+                ease: "power3.inOut",
+                duration: 1,
+                delay: 0.8
+            })
+        }), { scope: wrapperRef }
+    }
+
+
+    if (!props.summary) {
+        useGSAP(() => {
+
+            gsap.to(titleRef.current, {
+                opacity: 1,
+                translateY: 0,
+                scrollTrigger: {
+                    trigger: titleRef.current,
+                    start: "top 80%",
+                    end: "top 70%",
+                    scrub: 1,
+                    // markers: true,
+                    toggleActions: "none play reverse none",
+                }
+            });
+
+            gsap.to(sectionOneRef.current, {
                 opacity: 1,
                 translateY: 0,
                 scrollTrigger: {
@@ -43,37 +85,38 @@ export default function ProjectTextContent(props) {
                     toggleActions: "none play reverse none",
                 }
             });
-        gsap.to(sectionTwoRef.current, {
-            opacity: 1,
-            translateY: 0,
-            scrollTrigger: {
-                trigger: sectionTwoRef.current,
-                start: "top 75%",
-                end: "top 60%",
-                scrub: 1,
-                // markers: true,
-                toggleActions: "none play reverse none",
-            }
-        })
 
-        gsap.to(sectionThreeRef.current, {
-            opacity: 1,
-            translateY: 0,
-            scrollTrigger: {
-                trigger: sectionThreeRef.current,
-                start: "top 70%",
-                end: "top 60%",
-                scrub: 1,
-                // markers: true,
-                toggleActions: "none play reverse none",
-            }
-        })
-    }, [])
+            gsap.to(sectionTwoRef.current, {
+                opacity: 1,
+                translateY: 0,
+                scrollTrigger: {
+                    trigger: sectionTwoRef.current,
+                    start: "top 75%",
+                    end: "top 60%",
+                    scrub: 1,
+                    // markers: true,
+                    toggleActions: "none play reverse none",
+                }
+            })
 
+            gsap.to(sectionThreeRef.current, {
+                opacity: 1,
+                translateY: 0,
+                scrollTrigger: {
+                    trigger: sectionThreeRef.current,
+                    start: "top 70%",
+                    end: "top 60%",
+                    scrub: 1,
+                    // markers: true,
+                    toggleActions: "none play reverse none",
+                }
+            })
+        }, { scope: wrapperRef })
+    }
     return (
         <>
             {props.paragraphOne && (
-                <div className={classes.wrapper}>
+                <div ref={wrapperRef} className={classes.wrapper}>
                     <div className={classes['project-description']}>
 
                         {props.heading &&

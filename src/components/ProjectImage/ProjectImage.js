@@ -1,10 +1,10 @@
 import classes from './ProjectImage.module.scss';
+import { useRef } from 'react';
 
-import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
-// import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+import { useGSAP } from '@gsap/react';
 
 
 import { rubik } from '@/utils/fonts';
@@ -13,8 +13,11 @@ export default function ProjectImage(props) {
 
     const imgRef = useRef(null);
     const infoRef = useRef(null);
+
+    const wrapperRef = useRef(null);
+
     if (props.summary) {
-        useEffect(() => {
+        useGSAP(() => {
             gsap.to(imgRef.current, {
                 opacity: 1,
                 duration: 1,
@@ -28,11 +31,11 @@ export default function ProjectImage(props) {
                 delay: 0.5,
                 ease: "power3.inOut",
             })
-        })
+        }, { scope: wrapperRef })
     }
 
     if (!props.summary) {
-        useEffect(() => {
+        useGSAP(() => {
             gsap.to(imgRef.current, {
                 opacity: 1,
                 scrollTrigger: {
@@ -40,7 +43,7 @@ export default function ProjectImage(props) {
                     start: "top 80%",
                     end: "top 70%",
                     scrub: 1,
-                    markers: true,
+                    // markers: true,
                     toggleActions: "none play reverse none",
                 }
             });
@@ -57,11 +60,11 @@ export default function ProjectImage(props) {
                     toggleActions: "none play reverse none",
                 }
             })
-        })
+        }, { scope: wrapperRef })
     }
 
     return (
-        <div className={classes.wrapper}>
+        <div ref={wrapperRef} className={classes.wrapper}>
             <div className={classes['project-image']}>
                 <div ref={imgRef} className={classes['project-image__container']}>
                     <img src={`/images/projects/${props.url}`} alt="Project" />
