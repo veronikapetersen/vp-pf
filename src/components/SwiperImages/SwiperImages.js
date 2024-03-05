@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/bundle';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { rubik } from '@/utils/fonts';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";

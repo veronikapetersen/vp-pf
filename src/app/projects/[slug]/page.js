@@ -29,14 +29,15 @@ export default function Project({ params }) {
     const [main, setMain] = useState(null);
 
     useGSAP(() => {
-
         const timeline = gsap.timeline(
             { id: "projectTimeline" }
         );
+
         setTimeline(timeline);
         setBottomHeading(bottomHeadingRef.current);
         setMain(mainRef.current);
     }, []);
+
     return (
         <>
             <Nav

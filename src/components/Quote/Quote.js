@@ -1,31 +1,33 @@
 import classes from './Quote.module.scss';
 
 import gsap from 'gsap';
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
 
 export default function Quote(props) {
+
+    const wrapperRef = useRef(null);
     const quoteRef = useRef(null);
 
-    useEffect(() => {
-        gsap
-            .to(quoteRef.current, {
-                opacity: 1,
-                rotateY: 0,
-                scrollTrigger: {
-                    trigger: quoteRef.current,
-                    start: "top 50%",
-                    end: "top 60%",
-                    scrub: 1,
-                    // markers: true,
-                    toggleActions: "none play reverse none",
-                }
-            });
+    useGSAP(() => {
+        gsap.to(quoteRef.current, {
+            opacity: 1,
+            rotateY: 0,
+            scrollTrigger: {
+                trigger: quoteRef.current,
+                start: "top 50%",
+                end: "top 60%",
+                scrub: 1,
+                // markers: true,
+                toggleActions: "none play reverse none",
+            }
+        });
 
-    }, [])
+    }, { scope: wrapperRef })
 
     return (
         <>
-            <section className={classes.wrapper}>
+            <section ref={wrapperRef} className={classes.wrapper}>
                 <div ref={quoteRef} className={classes['quotes__container']}>
                     <div className={classes.quotes}>
                         {props.quotes && (

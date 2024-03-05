@@ -1,20 +1,21 @@
 'use client';
 import gsap from "gsap";
+import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 gsap.registerPlugin(ScrollTrigger);
 
 import { archivo_black } from "@/utils/fonts";
 import classes from './ProjectHeadings.module.scss';
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 
 import Link from "next/link";
 
 export function ProjectHeading1({ children }) {
 
     const titleRef = useRef(null);
+    const wrapperRef = useRef(null);
 
-    useEffect(() => {
+    useGSAP(() => {
 
         const title = titleRef.current;
 
@@ -22,7 +23,7 @@ export function ProjectHeading1({ children }) {
             translateY: "25%",
             scrollTrigger: {
                 trigger: title,
-                start: "top 20%",
+                start: "center 20%",
                 end: "top 2%",
                 scrub: 1,
                 // markers: true,
@@ -30,11 +31,11 @@ export function ProjectHeading1({ children }) {
             }
         });
 
-    }, [])
+    }, { scope: wrapperRef })
 
     return (
         <>
-            <div className={`${classes['heading-wrapper']} ${archivo_black.className}`}>
+            <div ref={wrapperRef} className={`${classes['heading-wrapper']} ${archivo_black.className}`}>
                 <h1 ref={titleRef} className={`${classes['project-title']} ${classes['project-title--current']} ${classes.parallax}`}>{children}</h1>
             </div>
         </>

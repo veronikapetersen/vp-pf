@@ -112,7 +112,6 @@
     position: absolute;
     z-index: 99;
     display: none;
-    // border: 1px solid black;
 
     @media (min-width: 768px) {
         display: block;
@@ -141,14 +140,6 @@
                 transform: translateY(120%);
             }
         }
-    }
-
-    @media (min-width: 992px) {
-        padding: 30px 10px;
-    }
-
-    @media (min-width: 1200px) {
-        padding: 40px 10px;
     }
 
     .centered {

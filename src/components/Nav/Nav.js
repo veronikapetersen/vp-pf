@@ -155,8 +155,12 @@ export default function Nav(props) {
                         <div ref={column2} className={classes.column}>
                             <nav className={classes.nav}>
                                 <ul className={classes['nav-list']}>
-                                    <li className={`${classes['nav-list-item']}`}><a href="/">LinkedIn</a></li>
-                                    <li className={`${classes['nav-list-item']}`}><a href="/">myemailhere@gmail.commmm</a></li>
+                                    <li className={`${classes['nav-list-item']}`}>
+                                        <Link target="_blank" href="https://www.linkedin.com/in/veronikapetersen/">LinkedIn</Link>
+                                    </li>
+                                    <li className={`${classes['nav-list-item']}`}>
+                                        <Link href="mailto:msveronika.petersen@gmail.com">msveronika.petersen@gmail.com</Link>
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -183,8 +187,12 @@ export default function Nav(props) {
                 <div ref={mobileMenuRef} className={`${classes['menu-mobile']} ${rubik.className}`}>
                     <div className={classes['menu-item']}>Veronika Petersen</div>
                     <div className={classes['menu-item']}>frontend developer</div>
-                    <div className={classes['menu-item']}><a href="/sss">linkedin</a></div>
-                    <div className={classes['menu-item']}><a href="/">myemailhere@gmail.com</a></div>
+                    <div className={classes['menu-item']}>
+                        <Link target="_blank" href="https://www.linkedin.com/in/veronikapetersen/">linkedin</Link>
+                    </div>
+                    <div className={classes['menu-item']}>
+                        <Link href="mailto:msveronika.petersen@gmail.com">msveronika.petersen@gmail.com</Link>
+                    </div>
                 </div>
 
                 <div ref={stairsRef} className={classes.stairs}>

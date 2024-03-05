@@ -32,7 +32,7 @@ export const slideLogoUp = (logoRef, column1Ref, column2Ref) => {
 
     tl.to([logoRef, column1Ref, column2Ref], {
         duration: 1,
-        delay: 1.8,
+        delay: 1.5,
         transform: `translateY(0)`,
         ease: "power2.inOut",
         stagger: 0.2

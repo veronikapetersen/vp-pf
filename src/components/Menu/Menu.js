@@ -5,13 +5,15 @@ import { archivo_black } from '@/utils/fonts';
 import ProjectsData from "@/projects-data/ProjectsData";
 
 import gsap from 'gsap';
-import { useEffect, useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import { useRef } from 'react';
 
 export default function Menu() {
 
     const listRef = useRef(null);
+    const wrapperRef = useRef(null);
 
-    useEffect(() => {
+    useGSAP(() => {
 
         const list = listRef.current.children;
         const menulinksArray = Array.from(list);
@@ -19,13 +21,13 @@ export default function Menu() {
         gsap.set(menulinksArray, { opacity: 0, y: '150vh', rotateY: '-90deg' });
         gsap.to(menulinksArray, {
             y: 0, opacity: 1, rotateY: '-45deg',
-            stagger: 0.1, duration: 2, ease: "power3.inOut", delay: 0.2
+            stagger: 0.1, duration: 2, ease: "power3.inOut"
         });
 
-    }, []);
+    }, { scope: wrapperRef });
 
     return (
-        <div className={classes['stage-perspective']}>
+        <div ref={wrapperRef} className={classes['stage-perspective']}>
             <div className={classes.stage}>
                 <ul ref={listRef} className={classes.list}>
                     {ProjectsData.map((project) => (

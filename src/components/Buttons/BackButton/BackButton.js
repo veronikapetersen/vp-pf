@@ -3,13 +3,15 @@ import classes from './BackButton.module.scss';
 import Link from 'next/link';
 
 import gsap from "gsap";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
+import { useGSAP } from '@gsap/react';
 
 
 export default function BackButton() {
     const buttonRef = useRef(null);
+    const wrapperRef = useRef(null);
 
-    useEffect(() => {
+    useGSAP(() => {
         gsap
             .to(buttonRef.current, {
                 duration: 1,
@@ -17,10 +19,10 @@ export default function BackButton() {
                 right: "16px",
                 ease: "power4.inOut"
             });
-    }, []);
+    }, { scope: wrapperRef });
 
     return (
-        <div className={classes.wrapper}>
+        <div ref={wrapperRef} className={classes.wrapper}>
 
             <Link className={classes.link} href="/">
                 <button ref={buttonRef} className={classes['back-button']}>

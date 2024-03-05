@@ -140,7 +140,7 @@ const ProjectsData = [
         url: "",
         github: "",
         year: "2023",
-        tools: ["HTML5 (Twig)", "Sass", "JavaScript", "Python", "Google API", "x-spreadsheet", "tippy.js"],
+        tools: ["HTML5 (Twig)", "Sass", "JavaScript", "Python", "Google APIs", "x-spreadsheet", "tippy.js"],
         feedback: {
             name: "Emil Rømer Christensen",
             position: "Head of Technology @ DEPT Agency",
@@ -154,7 +154,7 @@ const ProjectsData = [
             heading: "KWR Tool Overview",
             content: {
                 0: "The Keyword Research Tool is a powerful solution designed to streamline the process of keyword analysis. Developed in collaboration with a backend developer, this tool assists marketing specialists and SEO professionals in optimizing their content strategy by providing valuable keyword data.",
-                1: "The Keyword Research Tool seamlessly collaborates with multiple Google APIs (such as Google Ads API, Google Drive API, and Google Sheets API), to retrieve and handle data, providing users with an array of practical features.",
+                1: "The Keyword Research Tool integrates with multiple Google APIs (such as Google Ads API, Google Drive API, and Google Sheets API), to retrieve and handle data, providing users with an array of practical features.",
             },
             images: [
                 {
@@ -198,7 +198,7 @@ const ProjectsData = [
                 id: 3,
                 heading: "External NPM Package Customization",
                 content: {
-                    0: "Strategic use of the x-spreadsheet npm package significantly saved development hours. This package provided a robust foundation in form of a spreadsheet object, which was used in the KWR tool to easily display data.",
+                    0: "Incorporating the x-spreadsheet npm package significantly saved development hours. This package provided a robust foundation in form of a spreadsheet object, which was used in the KWR tool to easily display data.",
                     1: "To meet the unique requirements of the KWR tool, we modified the package by adding our own custom methods. This allowed us to implement additional features, such as dynamically displayed buttons in the top menu bar.",
                 },
                 images: [
@@ -295,7 +295,7 @@ const ProjectsData = [
                 id: 1,
                 heading: "Key Contributions",
                 content: {
-                    0: "Enhanced User Interface: Introduced new components to enrich the intranet's user interface, focusing on an intuitive and seamless experience.",
+                    0: "Enhanced User Interface: Introduced new components to enrich the intranet's user interface, focusing on an intuitive user experience.",
                     1: "Responsive Design: Ensured components were responsive, catering to various devices and screen sizes for a consistent user experience.",
                 },
                 images: [
@@ -401,7 +401,7 @@ const ProjectsData = [
         summary: {
             heading: "Viking Bar Overview",
             content: {
-                0: "As a freelance frontend developer for the Dancing Viking project, I played a key role in crafting a captivating presentational website for this intimate bar. The overarching theme, centered around a Viking aesthetics, creates a visually engaging online presence.",
+                0: "As a freelance frontend developer for the Dancing Viking project, I played a key role in crafting a captivating presentational website for this cozy bar. The overarching theme, centered around a Viking aesthetics, creates a visually engaging online presence.",
                 1: "Collaborating closely with a backend developer, my responsibilities extended to both frontend development and design aspects. Based on the clients requirements, I designed and developed elements that seamlessly integrated with the Viking theme."
             },
             images: [
@@ -416,16 +416,8 @@ const ProjectsData = [
                 id: 0,
                 heading: "Design and Aesthetics",
                 content: {
-                    0: "The design and aesthetics of the website underscore a visual narrative that resonates with the bar's character. The thematic choice leans heavily on a Viking style, where dark, rich colours evoke the mysterious essence of Norse culture. A careful integration of wood and paper textures brings a tactile and authentic feel to the website, mirroring the warmth of a traditional Viking setting.",
+                    0: "The design and aesthetics of the website underscore a visual narrative that resonates with the bar's character. The thematic choice leans heavily on a Viking style, where dark, rich colours evoke the mysterious essence of the nordic culture. A careful integration of wood and paper textures brings a tactile and authentic feel to the website, mirroring the warmth of a traditional Viking setting.",
                     1: "The use of a Norse font adds a layer of historical authenticity, capturing the spirit of ancient runes. This design approach not only pays homage to the bar's thematic identity but also creates a visually compelling online presence that invites guests into the unique world of the Dancing Viking.",
-                },
-            },
-            {
-                id: 1,
-                heading: "",
-                content: {
-                    0: "",
-                    1: "",
                 },
                 images: [
                     {
@@ -433,7 +425,7 @@ const ProjectsData = [
                         img_description: "An image carousel, powered by swiper.js, adds a dynamic and visually appealing touch to the website.",
                     },
                 ]
-            }
+            },
         ]
     },
 
@@ -449,7 +441,7 @@ const ProjectsData = [
         summary: {
             heading: "HTML5 Banner Ads Generator",
             content: {
-                0: "During my internship, under the mentorship of a senior developer, I worked on development of an HTML5 Banner Ad Generator. This tool streamlines the often complex process of creating banner ads by providing a user-friendly interface.",
+                0: "During my internship, under the mentorship of a senior developer, I worked on development of an HTML5 Banner Ad Generator. The tool streamlines the often complex process of creating banner ads by providing a user-friendly interface.",
                 1: "This tool allows users to generate and download code for HTML5 banner ads used in display advertising."
             },
             images: [
