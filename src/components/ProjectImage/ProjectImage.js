@@ -16,8 +16,8 @@ export default function ProjectImage(props) {
 
     const wrapperRef = useRef(null);
 
-    if (props.summary) {
-        useGSAP(() => {
+    useGSAP(() => {
+        if (props.summary) {
             gsap.to(imgRef.current, {
                 opacity: 1,
                 duration: 1,
@@ -31,11 +31,7 @@ export default function ProjectImage(props) {
                 delay: 0.5,
                 ease: "power3.inOut",
             })
-        }, { scope: wrapperRef })
-    }
-
-    if (!props.summary) {
-        useGSAP(() => {
+        } else {
             gsap.to(imgRef.current, {
                 opacity: 1,
                 scrollTrigger: {
@@ -60,8 +56,9 @@ export default function ProjectImage(props) {
                     toggleActions: "none play reverse none",
                 }
             })
-        }, { scope: wrapperRef })
-    }
+        }
+
+    }, { scope: wrapperRef })
 
     return (
         <div ref={wrapperRef} className={classes.wrapper}>

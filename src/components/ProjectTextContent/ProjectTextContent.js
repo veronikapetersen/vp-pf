@@ -20,8 +20,8 @@ export default function ProjectTextContent(props) {
 
     const wrapperRef = useRef(null);
 
-    if (props.summary) {
-        useGSAP(() => {
+    useGSAP(() => {
+        if (props.summary) {
             gsap.to(titleRef.current, {
                 opacity: 1,
                 translateY: 0,
@@ -53,13 +53,7 @@ export default function ProjectTextContent(props) {
                 duration: 1,
                 delay: 0.8
             })
-        }), { scope: wrapperRef }
-    }
-
-
-    if (!props.summary) {
-        useGSAP(() => {
-
+        } else {
             gsap.to(titleRef.current, {
                 opacity: 1,
                 translateY: 0,
@@ -111,8 +105,9 @@ export default function ProjectTextContent(props) {
                     toggleActions: "none play reverse none",
                 }
             })
-        }, { scope: wrapperRef })
-    }
+        }
+    }), { scope: wrapperRef }
+
     return (
         <>
             {props.paragraphOne && (
