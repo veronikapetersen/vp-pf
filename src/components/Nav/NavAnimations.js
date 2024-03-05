@@ -6,30 +6,30 @@ export const setInitialStatesforMoveLogo = (headerRef) => {
     gsap.set(headerRef, { scale: 1 });
 };
 
-export const moveLogoDown = (headerRef, headerRefHeight) => {
-    const tl = gsap.timeline();
+// export const moveLogoDown = (headerRef, headerRefHeight) => {
+//     const tl = gsap.timeline();
 
-    tl.to(headerRef, {
-        duration: 1,
-        delay: 1,
-        top: `calc(100vh - ${headerRefHeight}px)`,
-        transformOrigin: "center center",
-        ease: "power4.out"
-    });
+//     tl.to(headerRef, {
+//         duration: 1,
+//         delay: 1,
+//         top: `calc(100vh - ${headerRefHeight}px)`,
+//         transformOrigin: "center center",
+//         ease: "power4.out"
+//     });
 
-    return tl;
-};
+//     return tl;
+// };
 
 export const moveLogoUp = (headerRef) => {
     const tl = gsap.timeline();
 
     tl.to(headerRef, {
-        duration: 1,
-        delay: 1,
+        duration: 0.8,
+        delay: 0.5,
         top: 0,
         bottom: "auto",
         transformOrigin: "center center",
-        ease: "power4.out"
+        ease: "power4.inOut"
     });
 
     return tl;
@@ -41,12 +41,12 @@ export const setInitialStatesForSlideUp = (logoRef, column1Ref, column2Ref) => {
     });
 };
 
-export const slideLogoUp = (logoRef, column1Ref, column2Ref, delay = 0.2) => {
+export const slideLogoUp = (logoRef, column1Ref, column2Ref) => {
     const tl = gsap.timeline();
 
     tl.to([logoRef, column1Ref, column2Ref], {
         duration: 1,
-        delay,
+        delay: 1.8,
         transform: `translateY(0)`,
         ease: "power2.inOut",
         stagger: 0.2
@@ -62,10 +62,11 @@ export const fadeOutNavLinks = (navLinks, main) => {
 
     const tl = gsap.timeline({
         scrollTrigger: {
+            id: "project1",
             trigger: main,
             start: "top 10%",
             end: "250px 15%",
-            markers: false,
+            // markers: true,
             scrub: true,
             toggleActions: "play none none reverse",
         }
@@ -77,12 +78,14 @@ export const fadeOutNavLinks = (navLinks, main) => {
 }
 
 export const moveLogoDownOnScroll = (headerRef, headerRefHeight, bottomHeadingRef) => {
+
     const tl = gsap.timeline({
         scrollTrigger: {
+            id: "project2",
             trigger: bottomHeadingRef,
             start: "top 70%",
             end: "50% 90%", // when the 50% of the bottomHeadingRef is at 90% of the viewport
-            markers: false,
+            // markers: true,
             scrub: true,
             toggleActions: "play none none reverse",
         }
@@ -100,6 +103,7 @@ export const fadeInNavLinks = (navLinks, bottomHeadingRef) => {
 
     const tl = gsap.timeline({
         scrollTrigger: {
+            id: "project3",
             trigger: bottomHeadingRef,
             start: "top 65%",
             end: "80% 95%",

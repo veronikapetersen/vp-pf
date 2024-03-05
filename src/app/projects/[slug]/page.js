@@ -11,6 +11,7 @@ import ProjectsData from "@/projects-data/ProjectsData";
 
 import { useRef, useState, useLayoutEffect } from "react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 import SwiperImages from "@/components/SwiperImages/SwiperImages";
 
@@ -24,27 +25,25 @@ export default function Project({ params }) {
     const bottomHeadingRef = useRef(null);
 
     const [timeline, setTimeline] = useState(null);
+    const [bottomHeading, setBottomHeading] = useState(null);
+    const [main, setMain] = useState(null);
 
-    useLayoutEffect(() => {
-        const context = gsap.context(() => {
-            const tl = gsap.timeline({
-                paused: true
-            })
+    useGSAP(() => {
 
-            setTimeline(tl);
-        })
-
-        return () => { context.revert() }
-    }, [])
-
+        const timeline = gsap.timeline(
+            { id: "projectTimeline" }
+        );
+        setTimeline(timeline);
+        setBottomHeading(bottomHeadingRef.current);
+        setMain(mainRef.current);
+    }, []);
     return (
         <>
             <Nav
                 timeline={timeline}
+                main={main}
+                bottomHeading={bottomHeading}
                 bottom={true}
-                fadeNavLinks={true}
-                main={mainRef.current}
-                bottomHeading={bottomHeadingRef.current}
             ></Nav>
 
             {ProjectsData.filter((project) => project.slug === params.slug).map((project) => (

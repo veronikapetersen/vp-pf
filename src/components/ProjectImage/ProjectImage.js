@@ -2,6 +2,7 @@ import classes from './ProjectImage.module.scss';
 
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
+// import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,7 +40,7 @@ export default function ProjectImage(props) {
                     start: "top 80%",
                     end: "top 70%",
                     scrub: 1,
-                    // markers: true,
+                    markers: true,
                     toggleActions: "none play reverse none",
                 }
             });

@@ -1,7 +1,8 @@
 'use client';
 
-import { useLayoutEffect, useState } from "react";
+import { useState } from "react";
 import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 import Menu from "@/components/Menu/Menu";
 import Nav from "@/components/Nav/Nav";
 
@@ -9,22 +10,18 @@ export default function Home() {
 
   const [timeline, setTimeline] = useState(null);
 
-  useLayoutEffect(() => {
-    const context = gsap.context(() => {
-      const tl = gsap.timeline({
-        paused: true
-      })
+  useGSAP(() => {
 
-      setTimeline(tl);
-    })
-
-    return () => { context.revert() }
+    const timeline = gsap.timeline(
+      { id: "homePageTimeline" }
+    );
+    setTimeline(timeline);
   }, [])
 
 
   return (
     <>
-      <Nav timeline={timeline} slideUp={true} delay={1.8}></Nav>
+      <Nav timeline={timeline} slideUp={true} ></Nav>
       <Menu></Menu>
     </>
   )

@@ -1,14 +1,17 @@
 'use client';
 import Link from "next/link";
 import gsap from 'gsap';
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 import { roboto, rubik } from '@/utils/fonts';
 import classes from './Nav.module.scss';
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 import {
-    setInitialStatesforMoveLogo, moveLogoDown, moveLogoUp,
+    setInitialStatesforMoveLogo, moveLogoUp,
     setInitialStatesForSlideUp, slideLogoUp,
     setInitialStatesForFadeOutNavLinks, fadeOutNavLinks, fadeInNavLinks,
     moveLogoDownOnScroll
@@ -89,26 +92,8 @@ export default function Nav(props) {
         })
     }
 
-
-
-    useEffect(() => {
-
-        if (props.timeline && props.top) {
-            props.timeline
-                .add(setInitialStatesforMoveLogo(headerRef.current))
-                .add(moveLogoDown(headerRef.current, headerRef.current.offsetHeight))
-                .play()
-        } else if (props.timeline && props.bottom && !props.fadeNavLinks) {
-            props.timeline
-                .add(setInitialStatesforMoveLogo(headerRef.current))
-                .add(moveLogoUp(headerRef.current))
-                .play()
-        } else if (props.timeline && props.slideUp) {
-            props.timeline
-                .add(setInitialStatesForSlideUp(logoRefDesktop.current, column1.current, column2.current))
-                .add(slideLogoUp(logoRefDesktop.current, column1.current, column2.current, props.delay))
-                .play()
-        } else if (props.timeline && props.bottom && props.fadeNavLinks) {
+    const createAnimations = () => {
+        if (props.timeline && props.bottomHeading && props.main) {
             props.timeline
                 .add(setInitialStatesforMoveLogo(headerRef.current))
                 .add(setInitialStatesForFadeOutNavLinks(desktopMenuRef.current))
@@ -117,10 +102,33 @@ export default function Nav(props) {
                 .add(moveLogoDownOnScroll(headerRef.current, headerRef.current.offsetHeight, props.bottomHeading))
                 .add(fadeInNavLinks(desktopMenuRef.current, props.bottomHeading))
                 .play()
+
+            return props.timeline;
+        } else if (props.timeline && props.slideUp) {
+            console.log('slide up')
+            props.timeline
+                .add(setInitialStatesForSlideUp(logoRefDesktop.current, column1.current, column2.current))
+                .add(slideLogoUp(logoRefDesktop.current, column1.current, column2.current))
+                .play()
+
+            return props.timeline;
         }
+    }
 
-    }, [props.timeline])
+    useGSAP(() => {
+        let animation = createAnimations();
 
+        setTimeout(() => { // Delayed refresh to ensure ScrollTrigger picks up the correct layout
+            ScrollTrigger.refresh();
+        }, 100);
+
+        return () => {
+            animation?.kill();
+            ScrollTrigger.getById("project1")?.kill();
+            ScrollTrigger.getById("project2")?.kill();
+            ScrollTrigger.getById("project3")?.kill();
+        };
+    }, [props.bottomHeading, props.timeline]);
 
     return (
         <>
