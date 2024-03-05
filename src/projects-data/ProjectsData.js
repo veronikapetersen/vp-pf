@@ -11,7 +11,7 @@ const ProjectsData = [
         year: "2023",
         tools: ["React / Next.js", "CSS Modules", "Spotify API", "NextAuth.js", "GSAP", "Swiper.js"],
         summary: {
-            heading: "Spotify Stats Overview",
+            heading: "Overview",
             content: {
                 0: "Spotify Stats allows users to view the summary of their Spotify listening history, similar to the Spotify's Wrapped feature.",
                 1: "Developed as a personal hobby project, the website provides an opportunity for users to explore their Spotify statistics, thanks to the Spotify API integration.",
@@ -133,8 +133,6 @@ const ProjectsData = [
     {
         id: 1,
         slug: "kwr",
-        // title: "KWR",
-        // title: "Keyword Research Tool",
         title: "KWR Tool",
         image: "",
         url: "",
@@ -260,7 +258,7 @@ const ProjectsData = [
             ]
         },
         summary: {
-            heading: "ERST Intranet",
+            heading: "Overview",
             content: {
                 0: "This project focused on developing the frontend for an Intranet solution for The Danish Business Authority (Erhvervsstyrelsen). The Danish Business Authority is part of the Ministry of Industry, Business and Financial Affairs of Denmark.",
                 1: "The project included improving the design system by creating new components and strategically modifying existing ones, which contributed to an improved and streamlined user experience."
@@ -399,7 +397,7 @@ const ProjectsData = [
         year: "2023",
         tools: ["HTML5", "JavaScript", "Bootstrap", "Swiper.js"],
         summary: {
-            heading: "Viking Bar Overview",
+            heading: "Overview",
             content: {
                 0: "As a freelance frontend developer for the Dancing Viking project, I played a key role in crafting a captivating presentational website for this cozy bar. The overarching theme, centered around a Viking aesthetics, creates a visually engaging online presence.",
                 1: "Collaborating closely with a backend developer, my responsibilities extended to both frontend development and design aspects. Based on the clients requirements, I designed and developed elements that seamlessly integrated with the Viking theme."
@@ -439,7 +437,7 @@ const ProjectsData = [
         year: "2022",
         tools: ["HTML5 (Twig)", "CSS3", "Express.js (Node.js)", "Multer", "GSAP"],
         summary: {
-            heading: "HTML5 Banner Ads Generator",
+            heading: "Overview",
             content: {
                 0: "During my internship, under the mentorship of a senior developer, I worked on development of an HTML5 Banner Ad Generator. The tool streamlines the often complex process of creating banner ads by providing a user-friendly interface.",
                 1: "This tool allows users to generate and download code for HTML5 banner ads used in display advertising."
