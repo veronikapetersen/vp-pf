@@ -5,6 +5,12 @@
 
     text-align: right;
 
+    h1,
+    h2 {
+
+        font-weight: 400;
+    }
+
     &--next {
         @include contentMaxWidth(1600px);
         padding: 6rem 0 8rem 0;
@@ -70,14 +76,22 @@
         }
 
         &--next {
-            color: transparent;
+
+            a,
+            a:link,
+            a:visited,
+            a:focus,
+            a:active {
+                color: transparent;
+                transition: color .2s;
+            }
+
             -webkit-text-stroke: 1px black;
             transform-style: preserve-3d;
-            transition: transform 1.5s cubic-bezier(.075, .82, .165, 1), color .2s;
+            transition: transform 1.5s cubic-bezier(.075, .82, .165, 1);
             will-change: transform;
             margin: 6px 0;
             text-transform: uppercase;
-
             font-size: 3rem;
 
             @media (min-width: 576px) {
@@ -89,6 +103,16 @@
                 font-size: 6rem;
                 transform: rotateY(-45deg) scale(1);
                 transform-origin: right center;
+
+                &:hover {
+                    cursor: pointer;
+                    color: black;
+                    transform: rotateY(0deg) translateZ(0) scale(1);
+
+                    a {
+                        color: black;
+                    }
+                }
             }
 
             @media (min-width: 992px) {
@@ -98,14 +122,6 @@
 
             @media (min-width: 1200px) {
                 font-size: 8rem;
-            }
-
-            @media (hover:hover) and (min-width: 768px) {
-                &:hover {
-                    cursor: pointer;
-                    color: black;
-                    transform: rotateY(0deg) translateZ(0) scale(1);
-                }
             }
         }
     }

@@ -10,8 +10,8 @@ import { useRef } from 'react';
 
 export default function Menu() {
 
-    const listRef = useRef(null);
     const wrapperRef = useRef(null);
+    const listRef = useRef(null);
 
     useGSAP(() => {
 
@@ -30,11 +30,17 @@ export default function Menu() {
         <div ref={wrapperRef} className={classes['stage-perspective']}>
             <div className={classes.stage}>
                 <ul ref={listRef} className={classes.list}>
+
                     {ProjectsData.map((project) => (
-                        <li key={project.id} className={`${classes.menulinkWrapper} ${archivo_black.className}`}>
+
+                        <li key={project.id} className={`${classes['project-li']} ${archivo_black.className}`}>
+
                             <Link data-text={project.year + ' /'} href={`/projects/${project.slug}`}>{project.title}</Link>
+
                         </li>
+
                     ))}
+
                 </ul>
             </div>
         </div>

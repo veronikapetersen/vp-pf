@@ -112,13 +112,14 @@ export default function ProjectTextContent(props) {
         <>
             {props.paragraphOne && (
                 <div ref={wrapperRef} className={classes.wrapper}>
-                    <div className={classes['project-description']}>
-
+                    {/* <div className={classes['']}> */}
+                    <div className={`${classes['project-description']} ${rubik.className}`}>
                         {props.heading &&
                             <div ref={titleRef} className={classes.row}>
                                 <ParagraphHeading>{props.heading}</ParagraphHeading>
                             </div>
                         }
+
 
                         <div className={`${classes['row--with-columns']} ${rubik.className}`}>
                             <div className={classes.texts}>

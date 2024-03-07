@@ -1,5 +1,5 @@
 import classes from './Quote.module.scss';
-
+import { roboto } from '@/utils/fonts';
 import gsap from 'gsap';
 import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
@@ -27,7 +27,7 @@ export default function Quote(props) {
 
     return (
         <>
-            <section ref={wrapperRef} className={classes.wrapper}>
+            <section ref={wrapperRef} className={`${classes.wrapper} ${roboto.className}`}>
                 <div ref={quoteRef} className={classes['quotes__container']}>
                     <div className={classes.quotes}>
                         {props.quotes && (
