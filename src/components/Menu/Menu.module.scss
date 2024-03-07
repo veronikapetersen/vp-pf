@@ -24,8 +24,8 @@
                 cursor: pointer;
                 transition: transform 1.5s cubic-bezier(.075, .82, .165, 1);
                 -webkit-text-stroke: 1px black;
-                margin: 24px 0;
-                padding-right: 20px;
+                margin: 14px 0;
+                padding: 10px 20px 10px 0;
                 font-size: 3.3rem;
                 transform-origin: right center;
                 transform: translateZ(1000px) rotateY(-45deg);
@@ -53,18 +53,18 @@
                 @media (min-width: 992px) {
                     -webkit-text-stroke: 3px black;
                     font-size: 6.5rem;
-                    margin: 30px 0;
+                    padding: 14px 20px 14px 0;
                 }
 
                 @media (min-width: 1200px) {
                     font-size: 8rem;
                     -webkit-text-stroke: 3px black;
-                    margin: 46px 0;
+                    margin: 20px 0;
+                    padding: 18px 20px 18px 0;
                 }
 
                 @media (min-width: 1400px) {
                     font-size: 9rem;
-                    margin: 60px 0;
                 }
 
                 a {
