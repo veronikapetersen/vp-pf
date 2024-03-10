@@ -50,7 +50,7 @@ export function ProjectHeading2(props) {
 
                 <div className={classes['subheading']}>Next project</div>
 
-                <div className={classes.pers}>
+                <div className={classes.wrapper}>
                     <h2 className={`${classes['project-title']} ${classes['project-title--next']}`}>
                         <Link href={`/projects/${props.slug}`}> {props.heading} </Link>
                     </h2>

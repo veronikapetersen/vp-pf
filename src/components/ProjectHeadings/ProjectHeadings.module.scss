@@ -7,7 +7,6 @@
 
     h1,
     h2 {
-
         font-weight: 400;
     }
 
@@ -20,6 +19,7 @@
         }
 
         @media (min-width: 768px) {
+            perspective: 100vw;
             padding: 8rem 0;
         }
 
@@ -42,7 +42,6 @@
             }
         }
     }
-
 
     .project-title {
         margin-bottom: 1rem;
@@ -93,6 +92,7 @@
             margin: 6px 0;
             text-transform: uppercase;
             font-size: 3rem;
+            width: 100%;
 
             @media (min-width: 576px) {
                 -webkit-text-stroke: 2px black;
@@ -101,13 +101,13 @@
 
             @media (min-width: 768px) {
                 font-size: 6rem;
-                transform: rotateY(-45deg) scale(1);
                 transform-origin: right center;
+                transform: translateZ(1000px) rotateY(-45deg);
 
                 &:hover {
                     cursor: pointer;
                     color: black;
-                    transform: rotateY(0deg) translateZ(0) scale(1);
+                    transform: translateZ(1000px) rotateY(0);
 
                     a {
                         color: black;
@@ -127,11 +127,11 @@
     }
 }
 
-.pers {
-    transform-style: preserve-3d;
-    perspective: 100vw;
-}
-
 .parallax {
     transition: transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.wrapper {
+    transform: translateZ(-1000px);
+    transform-style: preserve-3d;
 }
